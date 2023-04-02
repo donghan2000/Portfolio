@@ -8,10 +8,11 @@ export default function Sidebar() {
 
 
 function NavBar() {
-    const sidebar = document.querySelector('.sidebar');
+    // const sidebar = document.querySelector('.sidebar');
+    // const toggle = document.querySelector('.sidebar .toggle');
     const navItems = ["Home", "About Me", "Works", "Skills", "Contact Me"]; // replace with your own navItems
     const navIcons = ["home", "user-pin", "briefcase-alt-2", "terminal", "megaphone"]
-    const toggle = document.querySelector('.sidebar .toggle');
+
 
     const [navOpen, setNavOpen] = useState(false);
     const [activeNavItem, setActiveNavItem] = useState(0);
@@ -27,7 +28,7 @@ function NavBar() {
     return (
         <div className={navOpen ? 'sidebar open' : 'sidebar'}>
             <div className="logo">
-                <img src="./img/logo.svg" />
+                <img src="./img/logo.svg" alt="logo" />
                 <h3>Dong Han</h3>
             </div>
             <nav>
