@@ -1,0 +1,247 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("./fonts/Montserrat/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: medium;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: bold;
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+}
+
+* {
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body,
+#root {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #12071f;
+  ;
+}
+
+.canvas {
+  width: 100%;
+  height: 100vh;
+}
+
+a {
+  pointer-events: all;
+  color: #ddd;
+  text-decoration: none;
+}
+
+h1 {
+  background: linear-gradient(30deg, #c850c0, #ffcc70);
+  background-clip: text;
+  /* For non-WebKit browsers */
+  -webkit-background-clip: text;
+  /* For WebKit-based browsers */
+  color: transparent;
+  /* For non-WebKit browsers */
+  -webkit-text-fill-color: transparent;
+  /* For WebKit-based browsers */
+}
+
+
+/* SIDEBAR */
+
+.sidebar {
+  width: 120px;
+  height: 100%;
+  /* backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px); */
+  background: rgba(10, 10, 10, .65);
+  box-shadow: 0 8px 32px rgb(2, 4, 24);
+  border-right: 2px solid rgba(255, 255, 255, .09);
+  transition: .4s ease-in-out;
+  position: fixed;
+  z-index: 10;
+}
+
+.sidebar.open {
+  width: 360px;
+}
+
+.sidebar .logo {
+  width: 100%;
+  height: 240px;
+  padding: 40px 0;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.sidebar .logo img {
+  width: 56px;
+  transition: .4s;
+}
+
+.sidebar.open .logo img {
+  width: 145px;
+}
+
+.sidebar .logo h3 {
+  color: #fff;
+  font-size: 36px;
+  margin-top: 12px;
+  text-transform: uppercase;
+  /* font-variant: small-caps; */
+  pointer-events: none;
+  scale: 0;
+  opacity: 0;
+}
+
+.sidebar.open .logo h3 {
+  scale: 1;
+  opacity: 1;
+  transition: .4s;
+  transition-delay: .2s;
+}
+
+.sidebar .nav-title {
+  color: #dadada;
+  margin: 40px 0 18px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.sidebar.open .nav-title {
+  opacity: 1;
+  transition: .4s;
+  transition-delay: .2s;
+}
+
+.sidebar nav {
+  padding: 0 30px;
+}
+
+.sidebar nav .nav-item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 4px;
+  width: 100%;
+  height: 56px;
+  padding: 0 16px;
+  margin: 8px 0;
+  color: #fff;
+  transition: .3s;
+  text-transform: uppercase;
+}
+
+.sidebar nav .nav-item.active {
+  background: #ff328e !important;
+  /* background: #c850c0 !important; */
+}
+
+.sidebar nav .nav-item:hover {
+  background: rgba(255, 255, 255, .1);
+}
+
+.sidebar nav .nav-item i {
+  font-size: 26px;
+}
+
+.sidebar nav .nav-item span {
+  font-size: 18px;
+  margin-left: 8px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar.open nav .nav-item span {
+  opacity: 1;
+  pointer-events: visible;
+  transition: .4s;
+  transition-delay: .3s;
+  font-weight: 700;
+}
+
+.sidebar hr {
+  width: 100%;
+  height: 2px;
+  border-radius: 3px;
+  margin: 40px 0 50px;
+  background: rgba(255, 255, 255, .1);
+  opacity: 0;
+}
+
+.sidebar.open hr {
+  opacity: 1;
+  transition: .4s;
+}
+
+.sidebar .toggle {
+
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 4px;
+  width: 100%;
+  height: 56px;
+  padding: 0 16px;
+  margin: 8px 0;
+  color: #ff328e;
+  transition: .3s;
+  font-size: 30px;
+}
+
+
+
+.sidebar .toggle span {
+  font-size: 18px;
+  margin-left: 8px;
+  opacity: 0;
+  pointer-events: none;
+  text-transform: uppercase;
+}
+
+.sidebar.open .toggle span {
+  opacity: 1;
+  transition: .5s linear;
+  transition-delay: .2s;
+  font-weight: 700;
+}
+
+
+.sidebar .toggle i {
+  transition: .4s linear;
+}
+
+.sidebar.open .toggle i {
+  transform: rotateY(180deg);
+}
+
+.resume-back {
+  background: white;
+  color: #ff328e !important;
+}
+
+
+
+/* .sidebar.open .toggle {
+  transform: translateY(45px);
+} */
