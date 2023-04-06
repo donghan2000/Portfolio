@@ -1,21 +1,47 @@
 import React from 'react'
-import { Canvas } from '@react-three/fiber';
-import Experience from './Experience.jsx'
+import Masthead from './Masthead.jsx'
 import Sidebar from './Sidebar.jsx';
+import Avatar from "./Avatar.jsx"
 
 function App() {
-
-
-
 
   return <>
 
     <Sidebar />
-    <div className='canvas'>
-      <Canvas camera={{ position: [0, 0, 1] }}>
-        <Experience />
+    <Masthead />
+
+    <section className='section-work'>
+      <div className="opacity-reduce-title">WORK</div>
+      <div className='title-divider'>
+        <div className='title-descriptions'>
+          <header>My Portfolio</header>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+
+        <div className="title-divider-button">
+          <a href="#" className="button">EXPLORE MORE</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    {/* <div className='about-section'>
+      <Canvas className='about-canvas'
+        camera={{ position: [4, 0, -12], fov: 75 }}
+      >
+        <Avatar />
+        <ambientLight />
       </Canvas>
-    </div>
+
+    </div> */}
+
+
 
 
   </>
