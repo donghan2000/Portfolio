@@ -1,7 +1,8 @@
 import React from 'react'
 import Masthead from './Masthead.jsx'
 import Sidebar from './Sidebar.jsx';
-import Avatar from "./Avatar.jsx"
+import Works from './Works.jsx';
+
 
 function App() {
 
@@ -9,12 +10,13 @@ function App() {
 
     <Sidebar />
     <Masthead />
+    <Works />
 
-    <section className='section-work'>
-      <div className="opacity-reduce-title">WORK</div>
-      <div className='title-divider'>
+    <section>
+      <div id='skill-behind' className="behind-title">SKILL</div>
+      <div id='skill-divider' className='title-divider'>
         <div className='title-descriptions'>
-          <header>My Portfolio</header>
+          <header>My Skill</header>
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
             when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -24,22 +26,14 @@ function App() {
         </div>
 
         <div className="title-divider-button">
-          <a href="#" className="button">EXPLORE MORE</a>
+          <a href="http://wwww.donghan.co" className="button">EXPLORE MORE</a>
         </div>
 
       </div>
     </section>
 
 
-    {/* <div className='about-section'>
-      <Canvas className='about-canvas'
-        camera={{ position: [4, 0, -12], fov: 75 }}
-      >
-        <Avatar />
-        <ambientLight />
-      </Canvas>
 
-    </div> */}
 
 
 

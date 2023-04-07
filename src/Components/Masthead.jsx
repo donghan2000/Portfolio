@@ -33,8 +33,8 @@ export default function Masthead() {
                     <div className='masthead-tagline'>
                         <p>Web Developer & UI / UX Designer</p>
                     </div>
-                    <div class="wrap">
-                        <a href="#" class="button">CONTACT ME</a>
+                    <div className="wrap">
+                        <a href="http://wwww.donghan.co" className="button">CONTACT ME</a>
                     </div>
                 </div>
             </div>
