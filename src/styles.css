@@ -307,7 +307,7 @@ a.button:hover {
   align-items: center;
   position: relative;
   z-index: 2;
-  padding: 50px;
+  padding-left: 250px;
 
 }
 
@@ -329,7 +329,6 @@ a.button:hover {
 
 .title-descriptions {
   max-width: 1000px;
-  margin-left: 150px;
 }
 
 .title-descriptions>p {
@@ -339,7 +338,7 @@ a.button:hover {
 
 .title-divider-button {
   width: 200px;
-  margin-top: 50px;
+  margin: 50px;
 }
 
 .title-divider-button a {
@@ -365,14 +364,14 @@ a.button:hover {
 }
 
 #work-behind {
-  margin-top: 100px;
+  margin-top: 50px;
   left: 48vw;
 }
 
 #skill-behind {
   left: 54vw;
   letter-spacing: -10px;
-
+  margin-top: -50px;
 }
 
 
@@ -395,19 +394,20 @@ a.button:hover {
 .about-section {
   display: flex;
   justify-content: space-between;
-  padding: 50px;
-  padding-left: 200px;
 }
 
 .about-canvas {
   height: 75vh !important;
   width: 50% !important;
+  padding: 2%;
 }
 
 .about-text {
   padding: 10px;
   color: white;
   line-height: 1.5;
+  padding-left: 250px;
+  padding-right: 50px;
 }
 
 .about-p {
@@ -497,8 +497,6 @@ a.button:hover {
 
 .work-circle {
   position: absolute;
-  /* width: 70px;
-  height: 70px; */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -604,6 +602,98 @@ a.button:hover {
   font-size: 25px;
   font-weight: bold;
   line-height: 20px;
+}
+
+.skills-canvas-section {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 250px;
+  margin-top: 100px;
+}
+
+.skills-individual-template {
+  width: 50%;
+  height: 100vh;
+}
+
+.skills-experience-text-title {
+  padding-top: 100px;
+}
+
+.skills-text-half {
+  width: 1200px;
+  padding: 2%;
+  margin-left: 100px;
+  color: #D61424;
+  font-size: 2em;
+  font-weight: 700;
+  /* border: 1px solid black; */
+}
+
+
+
+.skills-text-half {
+  margin-top: 30px;
+}
+
+
+
+.experiences-row-1 {
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.experiences-row-2 {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 100px;
+
+}
+
+.exp-small {
+  display: flex;
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  justify-content: space-between;
+  width: 350px;
+  margin-right: 50px;
+}
+
+.graph-title {
+  color: white;
+  font-size: 20px;
+  margin-top: 40px;
+}
+
+.graph-colorarea {
+  background-color: #D61424;
+  height: 10px;
+  border-radius: 100px;
+  position: absolute;
+  width: 30%;
+  margin-top: 30px;
+  z-index: 10;
+  /* box-shadow: 0px 10px 10px 1px rgba(0, 0, 0, 0.1); */
+}
+
+.graph-greyarea {
+  background-color: #292829;
+  height: 10px;
+  border-radius: 100px;
+  margin-top: 30px;
+  width: 40%;
+  position: absolute;
+  box-shadow: 0px 10px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.second-graph {
+  margin-top: 75px;
+}
+
+.second-color {
+  width: 25%;
 }
 
 

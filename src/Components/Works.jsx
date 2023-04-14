@@ -1,6 +1,7 @@
 import Gallery from './Gallery.jsx'
 import Avatar from "./Avatar.jsx"
 import { Canvas } from '@react-three/fiber';
+import { Loader } from '@react-three/drei'
 
 export default function Works() {
 
@@ -52,7 +53,7 @@ export default function Works() {
                     <Avatar />
                     <ambientLight />
                 </Canvas>
-
+                <Loader />
 
 
             </div>
