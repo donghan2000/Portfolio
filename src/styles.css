@@ -122,7 +122,10 @@ a.button:hover {
   box-shadow: rgba(214, 20, 36, 1) 0 80px 0px 2px inset;
 }
 
-/* SIDEBAR */
+
+/* ****************************************************************************************** */
+/* *********************************** SIDEBAR ************************************************/
+/* ****************************************************************************************** */
 
 .sidebar {
   width: 120px;
@@ -298,144 +301,138 @@ a.button:hover {
   color: #d61424 !important;
 }
 
-/* TITLE DIVDERS */
+/* ****************************************************************************************** */
+/* ***************************** TITLE DIVDERS ************************************************/
+/* ****************************************************************************************** */
 
-.title-divider {
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-  padding-left: 250px;
-
-}
-
-#work-divider {
-  margin-top: 100px;
-}
-
-#skill-divider {
-  margin-top: 40px;
-}
-
-.title-descriptions>header {
-  font-size: 4em;
-  color: #d61424;
-  font-weight: 700;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-}
-
-.title-descriptions {
-  max-width: 1000px;
-}
-
-.title-descriptions>p {
-  color: white;
-  line-height: 1.5;
-}
-
-.title-divider-button {
-  width: 200px;
-  margin: 50px;
-}
-
-.title-divider-button a {
-  -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-  -moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-  -ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-  -o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-  transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-  display: block;
-  /* max-width: 250px; */
-  text-align: center;
-  text-decoration: none;
-  padding: 15px 20px;
-}
 
 .behind-title {
   position: absolute;
-  font-size: 20rem;
+  font-size: 5rem;
   color: rgba(255, 255, 255, 0.04);
   font-weight: 700;
-  letter-spacing: -30px;
+  letter-spacing: -5px;
+  /* right: 20%; */
+  left: 59vw;
+  top: 100px;
+}
+
+.behind-title-left {
+  position: absolute;
+  font-size: 5rem;
+  color: rgba(255, 255, 255, 0.04);
+  font-weight: 700;
+  letter-spacing: -5px;
+  left: 30%;
+  top: 70px;
 
 }
 
-#work-behind {
-  margin-top: 50px;
-  left: 48vw;
-}
-
-#skill-behind {
-  left: 54vw;
-  letter-spacing: -10px;
-  margin-top: -50px;
-}
-
-
-
-
-
-/* ABOUT SECTION */
-
-.section-work {
-  overflow: hidden;
-  min-height: 0;
-  position: relative;
-  /* opacity: 0; */
-  -webkit-transition: opacity 0.4s;
-  -o-transition: opacity 0.4s;
-  transition: opacity 0.4s;
-}
-
-
-.about-section {
-  display: flex;
-  justify-content: space-between;
-}
-
-.about-canvas {
-  height: 75vh !important;
-  width: 50% !important;
-  padding: 2%;
-}
-
-.about-text {
-  padding: 10px;
-  color: white;
-  line-height: 1.5;
-  padding-left: 250px;
-  padding-right: 50px;
-}
-
-.about-p {
-  max-width: 750px;
-}
-
-.about-p>header {
-  text-transform: uppercase;
+.title>h1 {
+  text-align: center;
   font-weight: 700;
   color: #d61424;
   font-size: 4em;
+  margin-top: 170px;
 }
 
-.about-p>p {
+.sub-title-text {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
   padding-top: 50px;
+  line-height: 1.5;
+  padding-bottom: 50px;
+}
+
+
+.title-l {
+  max-width: 500px;
+}
+
+.title-l>h1 {
+  font-weight: 700;
+  color: #d61424;
+  font-size: 4em;
+  margin-top: 170px;
+  margin-left: 220px;
+}
+
+
+.crosses-l {
+  position: absolute;
+  top: 40px;
+}
+
+.crosses-r {
+  position: absolute;
+  right: 0;
+  top: 40px;
+}
+
+.horizontal {
+  background-color: #D61424;
+  height: 10px;
+  box-shadow: 0px 10px 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+.vertical {
+  background-color: #D61424;
+  rotate: 90deg;
+  height: 10px;
+}
+
+
+.gallery-h {
+
+  max-width: 400px;
+
+}
+
+.gallery-v {
+
+  width: 100px;
+  margin-left: 300px;
+}
+
+
+.story-h {
+  max-width: 500px;
+  margin-left: 100px;
+  box-shadow: 0px 10px 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+.story-v {
+  width: 1700px;
+  margin-left: -680px;
+
+}
+
+.skills-h {
+
+  max-width: 400px;
+  margin-left: 530px;
+}
+
+.skills-v {
+  width: 1700px;
+  margin-right: -800px;
 }
 
 
 
-/* Include this part for phone size only (ABOUT SECTION ONLY) */
-/* overflow: visible !important */
+
+/* ****************************************************************************************** */
+/* ********************** PORTFOLIO CONTAINER ************************************************/
+/* ****************************************************************************************** */
 
 
-/* Image Gallery */
 
 .work-container {
   background: #1D1D1D;
-  margin-bottom: 120px;
+  margin-bottom: 20px;
 }
 
 .work-main {
@@ -471,7 +468,6 @@ a.button:hover {
 
 .nav-works-index {
   position: absolute;
-  /* top: 85%; */
   left: 50%;
   transform: translate(-50%, -50%);
   width: 175px;
@@ -604,15 +600,104 @@ a.button:hover {
   line-height: 20px;
 }
 
+
+/* ****************************************************************************************** */
+/* ***************************** ABOUT SECTION ************************************************/
+/* ****************************************************************************************** */
+
+.section-masthead {
+  /* min-height: 0; */
+  position: relative;
+}
+
+.section-dividers {
+  overflow: hidden;
+  min-height: 0;
+  position: relative;
+  /* opacity: 0; */
+  -webkit-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+
+
+.about-div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.about-canvas {
+  height: 80vh !important;
+  width: 50% !important;
+  padding: 2%;
+  border: 1px solid #D61424;
+  box-shadow: 0px 0px 10px rgba(235, 15, 15, 0.5);
+  margin-right: 20px;
+  margin-top: 100px;
+  border-radius: 2px;
+}
+
+.about-text {
+  padding: 10px;
+  color: white;
+  line-height: 1.5;
+  padding-left: 250px;
+  padding-right: 50px;
+}
+
+.about-p {
+  max-width: 1000px;
+}
+
+.about-p>header {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #d61424;
+  font-size: 4em;
+  margin-top: 130px;
+}
+
+.about-bubble-p>p {
+  margin-top: 50px;
+  padding: 5%;
+  box-shadow: 0px 10px 10px 1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #D61424;
+  border-radius: 6px;
+  max-width: 600px;
+  font-size: 15px;
+}
+
+.about-p-right {
+  float: right;
+}
+
+.about-p-left {
+  float: left;
+}
+
+
+
+/* Include this part for phone size only (ABOUT SECTION ONLY) */
+/* overflow: visible !important */
+
+
+/* ****************************************************************************************** */
+/* **************************** SKILLS & EXPERIENCE SECTION **********************************/
+/* ****************************************************************************************** */
+
+
+
 .skills-canvas-section {
   display: flex;
   justify-content: space-between;
-  padding-left: 250px;
+  padding-left: 200px;
   margin-top: 100px;
 }
 
 .skills-individual-template {
-  width: 50%;
+  width: 30%;
   height: 100vh;
 }
 
@@ -623,14 +708,11 @@ a.button:hover {
 .skills-text-half {
   width: 1200px;
   padding: 2%;
-  margin-left: 100px;
   color: #D61424;
   font-size: 2em;
   font-weight: 700;
   /* border: 1px solid black; */
 }
-
-
 
 .skills-text-half {
   margin-top: 30px;
@@ -695,6 +777,11 @@ a.button:hover {
 .second-color {
   width: 25%;
 }
+
+
+/* ****************************************************************************************** */
+/* ********************************* CONTACT SECTION ******************************************/
+/* ****************************************************************************************** */
 
 
 @media only screen and (max-width: 1920px) {

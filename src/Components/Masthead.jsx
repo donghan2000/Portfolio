@@ -9,39 +9,39 @@ import { EffectComposer, Bloom } from '@react-three/postprocessing';
 export default function Masthead() {
 
     return <>
-        <section>
-            <Suspense>
-                <div className='masthead-canvas'>
-                    <Canvas camera={{ position: [0, 0, 1] }}>
-                        <Stars />
-                        <group position={[0.6, 0, 0]}>
-                            <DotSphere />
-                        </group>
-                        <ambientLight />
-                        <EffectComposer>
-                            <Bloom
+        <section className='section-masthead'>
+
+            <div className='masthead-canvas'>
+                <Canvas camera={{ position: [0, 0, 1] }}>
+                    <Stars />
+                    <group position={[0.6, 0, 0]}>
+                        <DotSphere />
+                    </group>
+                    <ambientLight />
+                    <EffectComposer>
+                        {/* <Bloom
                                 mipmapBlur
                                 intensity={1}
                                 luminanceThreshold={0}
                                 luminanceSmoothing={0.1}
 
-                            />
-                        </EffectComposer>
-                    </Canvas>
-                </div>
+                            /> */}
+                    </EffectComposer>
+                </Canvas>
+            </div>
 
-                <div className='masthead-div'>
-                    <div className='masthead-text'>
-                        <h1>DONG HAN</h1>
-                        <div className='masthead-tagline'>
-                            <p>Web Developer & UI / UX Designer</p>
-                        </div>
-                        <div className="wrap">
-                            <a href="http://wwww.donghan.co" className="button">CONTACT ME</a>
-                        </div>
+            <div className='masthead-div'>
+                <div className='masthead-text'>
+                    <h1>DONG HAN</h1>
+                    <div className='masthead-tagline'>
+                        <p>Web Developer & UI / UX Designer</p>
+                    </div>
+                    <div className="wrap">
+                        <a href="http://wwww.donghan.co" className="button">CONTACT ME</a>
                     </div>
                 </div>
-            </Suspense>
+            </div>
+
             <Loader />
         </section>
 
