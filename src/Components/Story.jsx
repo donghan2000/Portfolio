@@ -18,7 +18,6 @@ export default function Story() {
 
                     <div className='about-p'>
 
-
                         <header>My Story</header>
                         <div className='behind-title-left'>
                             <p>Myself</p>

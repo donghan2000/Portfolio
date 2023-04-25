@@ -23,7 +23,7 @@ export default function Experience() {
                                 rotation={[-(-Math.PI / 2), 0, i / Math.PI / 2]}
                                 position={[
 
-                                    -(2 - Math.sin(i / 5) * (6 + 2)),
+                                    -(4 - Math.sin(i / 5) * (6 + 2)),
                                     i * 0.5,
                                     2 - Math.cos(i / 5) * (6 + 2)
 
@@ -44,6 +44,17 @@ export default function Experience() {
 
                 <div className='skills-text-half'>
                     <div className='skills-experience-text-title'>
+
+                        <div className='skill-header'>
+                            <header>My Skills</header>
+                            <p>I am passionate about using my skills to contribute to meaningful projects and am excited about the opportunities that lie ahead.
+                                Here you will find a summary of my skills and expertise that I have acquired throughout my career.</p>
+                        </div>
+
+                        <div className='behind-title-skill'>
+                            <p>My Experiences</p>
+                        </div>
+
                         <header>Work Experiences</header>
 
                         <div className='experiences-container'>
