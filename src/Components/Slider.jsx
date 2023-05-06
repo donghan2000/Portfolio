@@ -52,6 +52,7 @@ export function Slider({ items, width = 600, visible = 4, style, children, setAc
     const wheelOffset = useRef(0)
     const dragOffset = useRef(0)
 
+
     useGesture(
         {
             onDrag: ({ event, offset: [x], direction: [dx] }) => {
@@ -63,21 +64,22 @@ export function Slider({ items, width = 600, visible = 4, style, children, setAc
                     runSprings(wheelOffset.current + -x, -dx)
                     const currentIndex = Math.round(((-x + dragOffset.current) / 2) / (width))
 
+
                     if (currentIndex > -1) {
 
                         // If starting is forward
                         if (currentIndex > prevIndex) {
 
-                            const rounds = Math.floor(currentIndex / 14)
+                            const rounds = Math.floor(currentIndex / 12)
 
                             if (rounds > 1) {
-                                const subtract = currentIndex - (14 * rounds)
+                                const subtract = currentIndex - (12 * rounds)
                                 setActiveIndex(subtract)
                             } else {
 
-                                if (currentIndex > 13) {
+                                if (currentIndex > 11) {
 
-                                    const subtract = currentIndex - (13 * rounds) - 1
+                                    const subtract = currentIndex - (11 * rounds) - 1
                                     setActiveIndex(subtract)
 
                                 } else {
@@ -88,16 +90,16 @@ export function Slider({ items, width = 600, visible = 4, style, children, setAc
 
                         } else if (currentIndex < prevIndex) {
 
-                            const rounds = Math.floor(currentIndex / 14)
+                            const rounds = Math.floor(currentIndex / 12)
 
                             if (rounds > 1) {
-                                const subtract = currentIndex - (14 * rounds)
+                                const subtract = currentIndex - (11 * rounds)
                                 setActiveIndex(subtract)
                             } else {
 
-                                if (currentIndex > 13) {
+                                if (currentIndex > 11) {
 
-                                    const subtract = currentIndex - (13 * rounds) - 1
+                                    const subtract = currentIndex - (11 * rounds) - 1
                                     setActiveIndex(subtract)
 
                                 } else {
@@ -113,15 +115,15 @@ export function Slider({ items, width = 600, visible = 4, style, children, setAc
 
                         if (prevIndex > currentIndex) {
 
-                            const rounds = - (Math.floor(currentIndex / 14) + 1)
-                            const multiply = currentIndex + (14 * rounds)
-                            setActiveIndex(14 + multiply)
+                            const rounds = - (Math.floor(currentIndex / 12) + 1)
+                            const multiply = currentIndex + (12 * rounds)
+                            setActiveIndex(12 + multiply)
 
 
                         } else if (currentIndex > prevIndex) {
-                            const rounds = - (Math.floor(currentIndex / 14) + 1)
-                            const multiply = currentIndex + (14 * rounds)
-                            setActiveIndex(14 + multiply)
+                            const rounds = - (Math.floor(currentIndex / 12) + 1)
+                            const multiply = currentIndex + (12 * rounds)
+                            setActiveIndex(12 + multiply)
                         }
 
                     }

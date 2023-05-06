@@ -1,87 +1,74 @@
 export const items = [
   {
-    imageUrl:
-      'url(https://images.pexels.com/photos/416430/pexels-photo-416430.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)',
-    height: 150,
-    Title: "Fusion",
-    workContentImage:"./img/Fusion-content.png"
-  },
-  {
-    imageUrl:
-      'url(https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)',
+    imageUrl: "url(./img/thumbnails/Fusion-Thumb.png)",
     height: 300,
-    Title: "Portfolio",
+    Title: "Fusion",
+    workContentImage: "./img/thumbnails/Fusion-Content.png",
   },
   {
-    imageUrl:
-      'url(https://images.pexels.com/photos/911738/pexels-photo-911738.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)',
+    imageUrl: "url(./img/thumbnails/Portfolio-Thumb.png)",
+    height: 300,
+    Title: "Previous Portfolio",
+    workContentImage: "./img/thumbnails/Portfolio-Content.png",
+  },
+  {
+    imageUrl: "url(./img/thumbnails/Upnetty-Thumb.png)",
     height: 300,
     Title: "Upnetty",
+    workContentImage: "./img/thumbnails/Upnetty-Content.png",
   },
   {
-    imageUrl:
-      'url(https://images.pexels.com/photos/358574/pexels-photo-358574.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)',
+    imageUrl: "url(./img/thumbnails/Solace-Thumb.png)",
     height: 300,
     Title: "Solace",
+    workContentImage: "./img/thumbnails/Solace-Content.png",
   },
   {
-    imageUrl:
-      'url(https://images.pexels.com/photos/1738986/pexels-photo-1738986.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)',
+    imageUrl: "url(./img/thumbnails/Shosetsu-Thumb.png)",
     height: 300,
-    Title: "Fate",
+    Title: "Shosetsu",
+    workContentImage: "./img/thumbnails/Shosetsu-Content.png",
   },
   {
-    imageUrl:
-      'url(https://images.pexels.com/photos/96381/pexels-photo-96381.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)',
+    imageUrl: "url(./img/thumbnails/Wekayak-Thumb.png)",
     height: 300,
-    Title: "Grand",
+    Title: "Wekayak",
+    workContentImage: "./img/thumbnails/WeKayak-Content.png",
   },
   {
-    imageUrl:
-      'url(https://images.pexels.com/photos/1005644/pexels-photo-1005644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)',
-    height: 200,
-    Title: "Order",
-  },
-  {
-    imageUrl:
-      'url(https://images.pexels.com/photos/227675/pexels-photo-227675.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)',
+    imageUrl: "url(./img/thumbnails/Desire-Thumb.png)",
     height: 300,
-    Title: "Tsukihime",
+    Title: "Desire",
+    workContentImage: "./img/thumbnails/Desire-Content.png",
   },
   {
-    imageUrl:
-      'url(https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)',
-    height: 200,
-    Title: "Kara no Kyoukai",
+    imageUrl: "url(./img/thumbnails/MrFin-Thumb.png)",
+    height: 300,
+    Title: "Mr Fin's Mini Adventure",
+    workContentImage: "./img/thumbnails/MrFin-Content.png",
   },
   {
-    imageUrl:
-      'url(https://images.pexels.com/photos/327482/pexels-photo-327482.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)',
-    height: 400,
-    Title: "Aitouka",
+    imageUrl: "url(./img/thumbnails/Worm-Thumb.png)",
+    height: 300,
+    Title: "Worm Defense",
+    workContentImage: "./img/thumbnails/Worm-Content.png",
   },
   {
-    imageUrl:
-      'url(https://images.pexels.com/photos/911758/pexels-photo-911758.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)',
-    height: 200,
-    Title: "Garden of Sinners",
+    imageUrl: "url(./img/thumbnails/Smartime-Thumb.png)",
+    height: 300,
+    Title: "Smartime",
+    workContentImage: "./img/thumbnails/Smartime-Content.svg",
   },
   {
-    imageUrl:
-      'url(https://images.pexels.com/photos/249074/pexels-photo-249074.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)',
-    height: 150,
-    Title: "Stellar",
+    imageUrl: "url(./img/thumbnails/Vapour-Thumb.png)",
+    height: 300,
+    Title: "Vapour",
+    workContentImage: "./img/thumbnails/Vapour-Content.png",
   },
   {
-    imageUrl:
-      'url(https://images.pexels.com/photos/310452/pexels-photo-310452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)',
-    height: 400,
-    Title: "Cubes",
-  },
-  {
-    imageUrl:
-      'url(https://images.pexels.com/photos/380337/pexels-photo-380337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)',
-    height: 200,
-    Title: "Windows",
+    imageUrl: "url(./img/thumbnails/Metaphor-Thumb.png)",
+    height: 300,
+    Title: "Metaphor",
+    workContentImage: "./img/thumbnails/Metaphor-Content.png",
   },
 ]

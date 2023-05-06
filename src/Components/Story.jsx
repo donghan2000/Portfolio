@@ -47,7 +47,6 @@ export default function Story() {
                 </Canvas>
                 <Loader />
 
-
             </div>
 
 

@@ -10,8 +10,6 @@ export default function Experience() {
     return <>
         <section className='section-dividers'>
 
-
-
             <div className='skills-canvas-section'>
 
                 <div className='skills-individual-template'>
@@ -32,7 +30,6 @@ export default function Experience() {
 
                             />
                         ))}
-                        {/* <OrbitControls /> */}
                     </Canvas>
                     <Loader />
                 </div>
