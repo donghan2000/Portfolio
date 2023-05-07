@@ -2,13 +2,13 @@ import { useState, useRef } from 'react'
 import { Canvas, useFrame, useLoader } from '@react-three/fiber'
 import { BakeShadows, useCursor, Loader } from '@react-three/drei'
 import { TextureLoader } from 'three'
-import { skillsets } from './Skillset'
+import { skillsets } from './Informations/Skillset'
 
 export default function Experience() {
 
 
     return <>
-        <section className='section-dividers'>
+        <section className='section-dividers' id='skills'>
 
             <div className='skills-canvas-section'>
 
@@ -112,12 +112,12 @@ function Stair({ textureUrl: initialTextureUrl, ...props }) {
 
     const handleMouseOver = () => {
         setHovered(true);
-        textureUrl.endsWith('.png') && setTextureUrl(textureUrl.replace('.png', '3.png'));
+        // textureUrl.endsWith('.png') && setTextureUrl(textureUrl.replace('.png', '3.png'));
     };
 
     const handleMouseOut = () => {
         setHovered(false);
-        textureUrl.endsWith('.png') && setTextureUrl(textureUrl.replace('3.png', '.png'));
+        // textureUrl.endsWith('.png') && setTextureUrl(textureUrl.replace('3.png', '.png'));
     };
 
     useFrame((state) =>
@@ -142,7 +142,7 @@ function Stair({ textureUrl: initialTextureUrl, ...props }) {
                 roughness={1}
                 transparent
                 opacity={hovered ? 1 : 1}
-                color={hovered ? "red" : "white"}
+            // color={hovered ? "red" : "white"}
             />
         </mesh>
     );

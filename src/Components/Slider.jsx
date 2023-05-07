@@ -53,89 +53,27 @@ export function Slider({ items, width = 600, visible = 4, style, children, setAc
     const dragOffset = useRef(0)
 
 
-    useGesture(
-        {
-            onDrag: ({ event, offset: [x], direction: [dx] }) => {
+    const handleDrag = ({ event, offset: [x], direction: [dx] }) => {
+        setModal(false);
 
-                setModal(false);
+        if (dx) {
+            dragOffset.current = -x
+            runSprings(wheelOffset.current + -x, -dx)
 
-                if (dx) {
-                    dragOffset.current = -x
-                    runSprings(wheelOffset.current + -x, -dx)
-                    const currentIndex = Math.round(((-x + dragOffset.current) / 2) / (width))
+            let currentIndex = Math.round(((-x + dragOffset.current) / 2) / width)
 
-
-                    if (currentIndex > -1) {
-
-                        // If starting is forward
-                        if (currentIndex > prevIndex) {
-
-                            const rounds = Math.floor(currentIndex / 12)
-
-                            if (rounds > 1) {
-                                const subtract = currentIndex - (12 * rounds)
-                                setActiveIndex(subtract)
-                            } else {
-
-                                if (currentIndex > 11) {
-
-                                    const subtract = currentIndex - (11 * rounds) - 1
-                                    setActiveIndex(subtract)
-
-                                } else {
-                                    setActiveIndex(currentIndex)
-                                }
-
-                            }
-
-                        } else if (currentIndex < prevIndex) {
-
-                            const rounds = Math.floor(currentIndex / 12)
-
-                            if (rounds > 1) {
-                                const subtract = currentIndex - (11 * rounds)
-                                setActiveIndex(subtract)
-                            } else {
-
-                                if (currentIndex > 11) {
-
-                                    const subtract = currentIndex - (11 * rounds) - 1
-                                    setActiveIndex(subtract)
-
-                                } else {
-                                    setActiveIndex(currentIndex)
-                                }
-
-                            }
-
-                        }
-
-                    } else {
-                        // Negative starts here
-
-                        if (prevIndex > currentIndex) {
-
-                            const rounds = - (Math.floor(currentIndex / 12) + 1)
-                            const multiply = currentIndex + (12 * rounds)
-                            setActiveIndex(12 + multiply)
-
-
-                        } else if (currentIndex > prevIndex) {
-                            const rounds = - (Math.floor(currentIndex / 12) + 1)
-                            const multiply = currentIndex + (12 * rounds)
-                            setActiveIndex(12 + multiply)
-                        }
-
-                    }
-
-                    setPrevIndex(currentIndex);
-                }
-
+            if (currentIndex >= 0) {
+                const subtract = currentIndex > 12 ? currentIndex - 12 * Math.floor(currentIndex / 13) - 1 : currentIndex
+                setActiveIndex(subtract)
+            } else {
+                setActiveIndex(13 + currentIndex + 13 * Math.abs(Math.floor(currentIndex / 13) + 1))
             }
-        },
-        { target, wheel: { eventOptions: { passive: false } } }
-    )
 
+            setPrevIndex(currentIndex);
+        }
+    }
+
+    useGesture({ onDrag: handleDrag }, { target, wheel: { eventOptions: { passive: false } } })
 
     return <>
         <div ref={target} style={{ ...style, ...styles.container }}>

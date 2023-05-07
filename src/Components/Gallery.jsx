@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { a } from '@react-spring/web'
 import { Slider } from './Slider'
-import { items } from './items'
+import { items } from './Informations/items'
 
 
 
@@ -36,7 +36,7 @@ export default function Gallery() {
 
 
     return <>
-        <section className='section-dividers'>
+        <section className='section-dividers' id='portfolio'>
             <div className="work-flex fill center work-container" >
 
                 <div className='title'>
@@ -105,7 +105,26 @@ export default function Gallery() {
 
                         <div className='works-modal-title'>
                             <h1>{items[openedModal].Title}</h1>
+
+                            <div className='modal-para'>
+                                <p>{items[openedModal].firstParagraph}</p>
+                            </div>
+
+                            <div className='modal-para'>
+                                <p>{items[openedModal].secondParagraph}</p>
+                            </div>
+
+                            <div className='modal-para'>
+                                <p>{items[openedModal].thirdParagraph}</p>
+                            </div>
+
+                            <a class="pro-link" href={items[openedModal].linkGoto} target="_blank">{items[openedModal].linkText}</a>
+                            <a class="pro-link" href={items[openedModal].linkSecondGoto} target="_blank">{items[openedModal].linkSecondText}</a>
+
                         </div>
+
+
+
                     </div>
 
                 </div>

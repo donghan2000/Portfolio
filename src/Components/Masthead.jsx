@@ -1,15 +1,16 @@
-import React, { Suspense } from 'react'
+import React, { useMemo, useCallback, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { useFrame } from "@react-three/fiber";
-import { useState, useRef } from "react";
-import { Points, PointMaterial, Edges, Loader } from '@react-three/drei'
-import { inSphere } from "maath/random";
+import { useFrame } from '@react-three/fiber';
+import { Points, PointMaterial, Edges } from '@react-three/drei';
+import { inSphere } from 'maath/random';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
+import { Link } from 'react-scroll';
 
 export default function Masthead() {
 
+
     return <>
-        <section className='section-masthead'>
+        <section className='section-masthead' id='hero' >
 
             <div className='masthead-canvas'>
                 <Canvas camera={{ position: [0, 0, 1] }}>
@@ -37,49 +38,41 @@ export default function Masthead() {
                         <p>Web Developer & UI / UX Designer</p>
                     </div>
                     <div className="wrap">
-                        <a href="http://wwww.donghan.co" className="button">CONTACT ME</a>
+                        <Link to="contact" spy={true} smooth={true} offset={-10} duration={500} className="button" >CONTACT ME</Link>
                     </div>
                 </div>
             </div>
-
-            <Loader />
         </section>
 
     </>
 
 }
 
-function Stars(props) {
-
-
-    const ref = useRef()
-    const [sphere] = useState(() => inSphere(new Float32Array(5000), { radius: 1.5 }))
+const Stars = React.memo((props) => {
+    const ref = useRef();
+    const spherePositions = useMemo(() => inSphere(new Float32Array(5000), { radius: 1.5 }), []);
     useFrame((state, delta) => {
-        ref.current.rotation.x -= delta / 10
-        ref.current.rotation.y -= delta / 15
-    })
-
-    return <>
-
-
+        ref.current.rotation.x -= delta / 10;
+        ref.current.rotation.y -= delta / 15;
+    });
+    return (
         <group rotation={[0, 0, Math.PI / 4]}>
-            <Points ref={ref} positions={sphere} stride={3} frustumCulled={false} {...props}>
+            <Points ref={ref} positions={spherePositions} stride={3} frustumCulled={false} {...props}>
                 <PointMaterial transparent color="#d61424" size={0.005} sizeAttenuation={true} depthWrite={false} />
             </Points>
         </group>
+    );
+});
 
-
-    </>
-}
-
-function DotSphere({ cutterPos = [0, 0, 0], ...props }) {
-    const cutter = useRef()
-    useFrame((state, delta) => {
-        cutter.current.rotation.x += delta / 5
-    })
+const DotSphere = React.memo(({ cutterPos = [0, 0, 0], ...props }) => {
+    const cutterRef = useRef();
+    const useFrameCallback = useCallback((state, delta) => {
+        cutterRef.current.rotation.x += delta / 5;
+    }, []);
+    useFrame(useFrameCallback);
     return (
         <mesh castShadow receiveShadow dispose={null} scale={0.2} rotation={[2, 2, 0]}>
-            <mesh ref={cutter} position={cutterPos} >
+            <mesh ref={cutterRef} position={cutterPos}>
                 <icosahedronGeometry args={[2, 2]} />
                 <meshBasicMaterial transparent opacity={0} />
                 <Edges scale={1} threshold={11.2}>
@@ -87,5 +80,5 @@ function DotSphere({ cutterPos = [0, 0, 0], ...props }) {
                 </Edges>
             </mesh>
         </mesh>
-    )
-}
+    );
+});

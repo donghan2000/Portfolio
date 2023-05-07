@@ -3,10 +3,10 @@ import ThreeGlobe from 'three-globe';
 import React, { useRef, useLayoutEffect } from 'react'
 import { Canvas, extend, useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import countries from "./custom.geo.json";
-import lines from "./lines.json";
-import map from "./map.json";
-import rings from "./rings.json";
+import countries from "./Informations/custom.geo.json";
+import lines from "./Informations/lines.json";
+import map from "./Informations/map.json";
+import rings from "./Informations/rings.json";
 
 
 export default function Contact() {
@@ -107,16 +107,20 @@ export default function Contact() {
 
     const fontRef = useRef()
 
+    const handleEmailClick = (e) => {
+        e.preventDefault();
+        window.location.href = 'mailto:donghan20002@gmail.com';
+    };
 
     return <>
-        <section className='section-dividers'>
+        <section className='section-dividers' >
 
             <div className='crosses-l'>
                 <div className='horizontal story-h'></div>
                 <div className='vertical story-v'></div>
             </div>
 
-            <div className='contact-div'>
+            <div className='contact-div' id='contact'>
 
                 <div className='contact-form'>
                     <div className='contact-p'>
@@ -182,7 +186,7 @@ export default function Contact() {
                         <div className='add-text'>
                             <p>Low Dong Han,</p>
                             <p>Ang Mo Kio Avenue 10</p>
-                            <p> <span className='span-add'>@ </span> : donghan20002@gmail.com</p>
+                            <p className='email-click' onClick={handleEmailClick}> <span className='span-add'>@ </span> : donghan20002@gmail.com</p>
                         </div>
                     </div>
                 </div>

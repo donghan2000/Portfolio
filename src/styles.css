@@ -37,7 +37,7 @@ body,
   width: 100%;
   height: 100%;
   background-color: #1D1D1D;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -103,6 +103,7 @@ section {
   padding-top: 30px;
   width: 300px;
   margin-left: 7px;
+  cursor: pointer;
 }
 
 
@@ -266,6 +267,9 @@ a.button:hover {
   transition: .4s;
   transition-delay: .3s;
   font-weight: 700;
+  /* vertical-align: middle;
+  display: inline-block;
+  margin-bottom: 12px; */
 }
 
 .sidebar hr {
@@ -327,6 +331,14 @@ a.button:hover {
 .resume-back {
   background: white;
   color: #d61424 !important;
+}
+
+.nav-item>a {
+  line-height: 0px;
+}
+
+.second-set-nav {
+  margin-bottom: 0px !important;
 }
 
 /* ****************************************************************************************** */
@@ -650,6 +662,25 @@ a.button:hover {
   line-height: 0.7;
 }
 
+.modal-para {
+  color: white;
+  padding: 2%;
+  line-height: 1.5;
+}
+
+
+
+.pro-link {
+  text-decoration: none;
+  color: #D61424;
+  font-weight: 700;
+  margin-top: 20px;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 20px;
+  padding: 2%;
+}
+
 
 /* ****************************************************************************************** */
 /* ***************************** ABOUT SECTION ************************************************/
@@ -923,6 +954,10 @@ textarea {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border: none;
   margin-top: 20px;
+}
+
+.email-click {
+  cursor: pointer;
 }
 
 
