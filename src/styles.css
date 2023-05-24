@@ -72,10 +72,10 @@ section {
 }
 
 .masthead-text {
-  width: 100%;
+  max-width: 500px;
   position: absolute;
   top: 50%;
-  left: 65%;
+  left: 450px;
   transform: translate3d(-50%, -50%, 0);
 
 }
@@ -84,7 +84,7 @@ section {
   margin: 0;
   font-size: 5em;
   background: linear-gradient(30deg, #D61424, #ee0505);
-  background-clip: text;
+  /* background-clip: text; */
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
@@ -183,18 +183,22 @@ a.button:hover {
 }
 
 .sidebar .logo img {
-  width: 56px;
+  width: 100px;
   transition: .4s;
+  margin-top: 75px;
+  margin-left: 15px;
 }
 
 .sidebar.open .logo img {
-  width: 145px;
+  width: 200px;
+  margin-top: 0px;
+  margin-left: 12px;
 }
 
 .sidebar .logo h3 {
   color: #fff;
   font-size: 36px;
-  margin-top: 12px;
+  margin-top: 20px;
   text-transform: uppercase;
   /* font-variant: small-caps; */
   pointer-events: none;
@@ -342,6 +346,293 @@ a.button:hover {
 }
 
 /* ****************************************************************************************** */
+/* ***************************** Hamburger Nav ************************************************/
+/* ****************************************************************************************** */
+
+.section-center {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  z-index: 6;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+.hamburger h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 7vw;
+  line-height: 1;
+  color: #ffeba7;
+  text-align: center;
+  -webkit-text-stroke: 2px #ffeba7;
+  text-stroke: 2px #ffeba7;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  color: transparent;
+}
+
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked) {
+  position: fixed;
+  display: none;
+}
+
+.menu-icon:checked+label,
+.menu-icon:not(:checked)+label {
+  position: fixed;
+  top: 63px;
+  right: 75px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  z-index: 13;
+}
+
+.menu-icon:checked+label:before,
+.menu-icon:not(:checked)+label:before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 30px;
+  height: 20px;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  border-top: 2px solid #ececee;
+  border-bottom: 2px solid #ececee;
+  transition: border-width 100ms 1500ms ease,
+    top 100ms 1600ms cubic-bezier(0.23, 1, 0.32, 1),
+    height 100ms 1600ms cubic-bezier(0.23, 1, 0.32, 1),
+    background-color 200ms ease,
+    transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.menu-icon:checked+label:after,
+.menu-icon:not(:checked)+label:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 22px;
+  height: 2px;
+  z-index: 20;
+  top: 10px;
+  right: 4px;
+  background-color: #ececee;
+  margin-top: -1px;
+  transition: width 100ms 1750ms ease,
+    right 100ms 1750ms ease,
+    margin-top 100ms ease,
+    transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.menu-icon:checked+label:before {
+  top: 10px;
+  transform: rotate(45deg);
+  height: 2px;
+  background-color: #ececee;
+  border-width: 0;
+  transition: border-width 100ms 340ms ease,
+    top 100ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
+    height 100ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
+    background-color 200ms 500ms ease,
+    transform 200ms 1700ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.menu-icon:checked+label:after {
+  width: 30px;
+  margin-top: 0;
+  right: 0;
+  transform: rotate(-45deg);
+  transition: width 100ms ease,
+    right 100ms ease,
+    margin-top 100ms 500ms ease,
+    transform 200ms 1700ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+
+.nav {
+  position: fixed;
+  top: 33px;
+  right: 50px;
+  display: block;
+  width: 80px;
+  height: 80px;
+  padding: 0;
+  margin: 0;
+  z-index: 11;
+  overflow: hidden;
+  box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.3);
+  border: 1px solid red;
+  background-color: #1d1d1d;
+  animation: border-transform 7s linear infinite;
+  transition: top 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),
+    right 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),
+    transform 250ms 1100ms ease,
+    width 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1),
+    height 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes border-transform {
+
+  0%,
+  100% {
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+  }
+
+  14% {
+    border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%;
+  }
+
+  28% {
+    border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%;
+  }
+
+  42% {
+    border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%;
+  }
+
+  56% {
+    border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%;
+  }
+
+  70% {
+    border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%;
+  }
+
+  84% {
+    border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%;
+  }
+}
+
+.menu-icon:checked~.nav {
+  animation-play-state: paused;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  width: 200%;
+  z-index: 11;
+  height: 200%;
+  transition: top 350ms 700ms cubic-bezier(0.23, 1, 0.32, 1),
+    right 350ms 700ms cubic-bezier(0.23, 1, 0.32, 1),
+    transform 250ms 700ms ease,
+    width 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1),
+    height 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.nav ul {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  z-index: 6;
+  text-align: center;
+  transform: translateY(-50%);
+  list-style: none;
+}
+
+.nav ul li {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 10px 0;
+  text-align: center;
+  list-style: none;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(30px);
+  transition: all 250ms linear;
+}
+
+.nav ul li:nth-child(1) {
+  transition-delay: 200ms;
+}
+
+.nav ul li:nth-child(2) {
+  transition-delay: 150ms;
+}
+
+.nav ul li:nth-child(3) {
+  transition-delay: 100ms;
+}
+
+.nav ul li:nth-child(4) {
+  transition-delay: 50ms;
+}
+
+.nav ul li:nth-child(5) {
+  transition-delay: 25ms;
+}
+
+.nav ul li p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9vh;
+  text-transform: uppercase;
+  line-height: 1.2;
+  font-weight: 800;
+  display: inline-block;
+  position: relative;
+  color: #ececee;
+  transition: all 250ms linear;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav ul li p:hover {
+  text-decoration: none;
+  color: #D61424;
+}
+
+
+.menu-icon:checked~.nav ul li {
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 350ms ease,
+    transform 250ms ease;
+}
+
+.menu-icon:checked~.nav ul li:nth-child(1) {
+  transition-delay: 1400ms;
+}
+
+.menu-icon:checked~.nav ul li:nth-child(2) {
+  transition-delay: 1480ms;
+}
+
+.menu-icon:checked~.nav ul li:nth-child(3) {
+  transition-delay: 1560ms;
+}
+
+.menu-icon:checked~.nav ul li:nth-child(4) {
+  transition-delay: 1640ms;
+}
+
+.menu-icon:checked~.nav ul li:nth-child(5) {
+  transition-delay: 1720ms;
+}
+
+
+
+
+/* ****************************************************************************************** */
 /* ***************************** TITLE DIVDERS ************************************************/
 /* ****************************************************************************************** */
 
@@ -354,7 +645,7 @@ a.button:hover {
   font-weight: 700;
   letter-spacing: -5px;
   left: 59vw;
-  top: 100px;
+  top: 85px;
 }
 
 .behind-title-left {
@@ -380,12 +671,13 @@ a.button:hover {
 
 .behind-title-skill {
   position: absolute;
-  font-size: 5rem;
+  font-size: 4.5rem;
   color: rgba(255, 255, 255, 0.04);
   font-weight: 700;
   letter-spacing: -5px;
   left: 57vw;
   top: 80px;
+
 }
 
 
@@ -402,9 +694,9 @@ a.button:hover {
   margin: 0 auto;
   text-align: center;
   color: white;
-  padding-top: 50px;
+  padding-top: 30px;
   line-height: 1.5;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 
 
@@ -506,6 +798,7 @@ a.button:hover {
   width: 100%;
   height: 100%;
   padding: 70px 100px;
+  margin-left: -100px;
 }
 
 .work-marker {
@@ -515,6 +808,7 @@ a.button:hover {
   left: 100px;
   font-weight: 700;
   text-transform: uppercase;
+  margin-left: -100px;
 }
 
 .works-gallery-image {
@@ -559,6 +853,7 @@ a.button:hover {
   transform: translate(-50%, -50%);
   cursor: pointer;
   transition: all .1s ease-in-out;
+  margin-left: -100px;
 }
 
 .work-circle:before {
@@ -707,15 +1002,17 @@ a.button:hover {
   justify-content: space-around;
   align-items: center;
   margin-bottom: 30px;
+  flex-wrap: wrap-reverse;
 }
 
 .about-canvas {
-  height: 80vh !important;
-  width: 50% !important;
+  /* height: 80vh !important; */
+  height: 800px !important;
+  width: 750px !important;
   padding: 2%;
   border: 1px solid #D61424;
   box-shadow: 0px 0px 10px rgba(235, 15, 15, 0.5);
-  margin-right: 20px;
+  margin-right: 50px;
   margin-top: 100px;
   border-radius: 2px;
 }
@@ -729,14 +1026,14 @@ a.button:hover {
 }
 
 .about-p {
-  max-width: 1000px;
+  max-width: 800px;
 }
 
 .about-p>header {
   font-weight: 700;
   color: #d61424;
   font-size: 4em;
-  margin-top: 130px;
+  margin-top: 60px;
 }
 
 .about-bubble-p>p {
@@ -771,14 +1068,17 @@ a.button:hover {
 
 .skills-canvas-section {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-left: 200px;
   margin-top: 50px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
 }
 
 .skills-individual-template {
-  width: 30%;
-  height: 100vh;
+  width: 600px !important;
+  height: 900px;
+  border: 1px solid red;
 }
 
 .skills-experience-text-title {
@@ -786,7 +1086,7 @@ a.button:hover {
 }
 
 .skills-text-half {
-  width: 1050px;
+  width: 1000px;
   padding: 2%;
   color: #D61424;
   font-size: 2em;
@@ -841,6 +1141,7 @@ a.button:hover {
   color: white;
   font-size: 20px;
   margin-top: 40px;
+  max-width: 200px;
 }
 
 .graph-colorarea {
@@ -864,6 +1165,12 @@ a.button:hover {
   box-shadow: 0px 10px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
+.proficiency-graph {
+  max-width: 200px;
+}
+
+
+
 .second-graph {
   margin-top: 75px;
 }
@@ -886,7 +1193,7 @@ a.button:hover {
 
 .contact-canvas {
   width: 50%;
-  height: 100vh;
+  height: 1000px;
 }
 
 .contact-form {
@@ -968,12 +1275,13 @@ textarea {
 
 .copy-div {
   border-top: 1px solid #D61424;
-  width: 100%;
+  width: 1920px;
   height: 150px;
   display: flex;
   align-items: center;
   color: #D61424;
   text-align: center;
+  margin: 0 auto;
 }
 
 .copy-text {
@@ -982,13 +1290,4 @@ textarea {
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
-}
-
-
-@media only screen and (max-width: 1920px) {
-
-  section {
-    width: 100% !important;
-  }
-
 }

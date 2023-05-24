@@ -1,0 +1,554 @@
+@media only screen and (max-width: 1920px) {
+
+    /* ****************************************************************************************** */
+    /* **************************** OVERALL **********************************/
+    /* ****************************************************************************************** */
+
+    section {
+        width: 100% !important;
+    }
+
+    .copy-div {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 1919px) {
+
+    /* ****************************************************************************************** */
+    /* **************************** MY STORY **********************************/
+    /* ****************************************************************************************** */
+
+    .about-canvas {
+        max-width: 800px !important;
+    }
+
+    .about-p {
+        max-width: 500px;
+    }
+
+
+    /* ****************************************************************************************** */
+    /* **************************** EXPERIENCES **********************************/
+    /* ****************************************************************************************** */
+
+    .skills-text-half {
+        width: 800px;
+        margin-left: -100px;
+    }
+
+    .skills-canvas-section {
+        padding-left: 150px;
+    }
+
+    .skills-individual-template {
+        width: 550px !important;
+    }
+
+}
+
+@media only screen and (max-width: 1670px) {
+
+    /* ****************************************************************************************** */
+    /* **************************** MY STORY **********************************/
+    /* ****************************************************************************************** */
+
+    .about-canvas {
+        max-width: 500px !important;
+    }
+
+    .behind-title-left {
+        left: 40%;
+    }
+
+    /* ****************************************************************************************** */
+    /* **************************** EXPERIENCES **********************************/
+    /* ****************************************************************************************** */
+
+    .skills-text-half {
+        width: 700px;
+        margin-left: -150px;
+    }
+
+    .skills-individual-template {
+        height: 1000px
+    }
+
+    .skills-canvas-section {
+        padding-left: 100px;
+    }
+
+    .exp-small {
+        width: 500px;
+        margin-bottom: 20px;
+        margin-right: 0px;
+    }
+
+    .experiences-row-1 {
+        flex-wrap: wrap;
+        margin-bottom: 0px;
+    }
+
+    .experiences-row-2 {
+        flex-wrap: wrap;
+        margin-top: 0px;
+        margin-bottom: 30px;
+    }
+
+    .skills-individual-template {
+        width: 500px !important;
+        height: 900px;
+        margin-bottom: 50px;
+    }
+
+}
+
+@media only screen and (max-width: 1440px) {
+
+    /* ****************************************************************************************** */
+    /* **************************** MY STORY **********************************/
+    /* ****************************************************************************************** */
+
+    .about-canvas {
+        max-width: 450px !important;
+        height: 750px !important;
+    }
+
+    .about-p {
+        max-width: 450px;
+    }
+
+    .skills-text-half {
+        width: 600px;
+        margin-left: -150px;
+
+    }
+
+    .skills-canvas-section {
+        padding-left: 70px;
+    }
+
+    /* ****************************************************************************************** */
+    /* **************************** EXPERIENCES **********************************/
+    /* ****************************************************************************************** */
+
+    .behind-title-skill {
+        font-size: 4.2rem;
+    }
+
+    .skills-individual-template {
+        width: 450px !important;
+        margin-top: 30px;
+    }
+
+
+}
+
+@media only screen and (max-width: 1280px) {
+
+    /* ****************************************************************************************** */
+    /* **************************** GALLERY **********************************/
+    /* ****************************************************************************************** */
+
+    .sub-title-text {
+        max-width: 600px;
+        padding-top: 40px;
+    }
+
+    /* ****************************************************************************************** */
+    /* **************************** MY STORY **********************************/
+    /* ****************************************************************************************** */
+
+    .about-canvas {
+        max-width: 1280px !important;
+        height: 500px !important;
+        margin-left: 200px;
+    }
+
+    .about-p {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .about-p>header {
+        margin-top: 80px;
+    }
+
+    .behind-title-left {
+        left: 40%;
+        top: 620px;
+    }
+
+    /* ****************************************************************************************** */
+    /* **************************** EXPERIENCE **********************************/
+    /* ****************************************************************************************** */
+
+    .skills-individual-template {
+
+        width: 80% !important;
+        height: 700px;
+        margin: 5%;
+    }
+
+    .skills-text-half {
+        width: 80%;
+        margin: 0 auto;
+        height: 900px;
+        margin-top: 30px;
+    }
+
+    .skills-experience-text-title {
+        padding-top: 0px;
+    }
+
+
+    .behind-title-skill {
+        font-size: 4rem;
+        left: 35vw;
+        top: 850px;
+    }
+
+    .graph-greyarea {
+        width: 50%;
+    }
+
+    .graph-colorarea {
+        width: 40%;
+    }
+
+    .second-color {
+        width: 35%;
+    }
+
+    .exp-small {
+        width: initial;
+    }
+
+    .exp-small>p:nth-child(2) {
+        margin-left: 20px;
+    }
+
+    .experiences-row-1 {
+        justify-content: space-between;
+    }
+
+    .experiences-row-2 {
+        justify-content: space-between;
+    }
+
+    .exp-second {
+        margin-right: 63px;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 950px) {
+
+    /* ****************************************************************************************** */
+    /* **************************** GALLERY **********************************/
+    /* ****************************************************************************************** */
+
+
+    .behind-title {
+        left: 20vw;
+    }
+
+    .sub-title-text {
+        max-width: 500px;
+        padding-top: 40px;
+    }
+
+    /* ****************************************************************************************** */
+    /* **************************** MY STORY **********************************/
+    /* ****************************************************************************************** */
+
+    .about-canvas {
+        margin-left: 220px;
+    }
+
+    .behind-title-left {
+        left: 45%;
+    }
+
+    .skills-text-half {
+        width: 550px;
+        margin-top: 50px
+    }
+
+    /* ****************************************************************************************** */
+    /* **************************** Experiences **********************************/
+    /* ****************************************************************************************** */
+
+    .behind-title-skill {
+        left: 30vw;
+        top: 830px
+    }
+
+    .exp-small {
+        width: 100%;
+    }
+
+    .exp-second {
+        margin-right: 0px;
+    }
+
+    .graph-greyarea {
+        width: 60%;
+    }
+
+    .graph-colorarea {
+        width: 50%;
+    }
+
+    .second-color {
+        width: 45%;
+    }
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    /* ****************************************************************************************** */
+    /* **************************** HAMBURGER NAVBAR **********************************/
+    /* ****************************************************************************************** */
+
+    .menu-icon:checked+label,
+    .menu-icon:not(:checked)+label {
+        right: 55px;
+    }
+
+    .nav {
+        right: 30px;
+    }
+
+    .nav ul li p {
+        font-size: 5vh;
+    }
+
+    /* ****************************************************************************************** */
+    /* **************************** MASTHEAD **********************************/
+    /* ****************************************************************************************** */
+
+    .masthead-text {
+        transform: none;
+        top: 40%;
+        left: 50px;
+    }
+
+    .masthead-text>h1 {
+        font-size: 3em;
+    }
+
+
+    /* ****************************************************************************************** */
+    /* **************************** GALLERY **********************************/
+    /* ****************************************************************************************** */
+
+    .behind-title {
+        left: 5vw;
+    }
+
+    .sub-title-text {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .work-content {
+        padding: 70px 150px;
+        margin-left: -90px;
+
+    }
+
+    .work-marker {
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        margin-left: -90px;
+    }
+
+    .works-gallery-image {
+        background-size: cover !important;
+    }
+
+    .work-circle {
+        margin-left: -90px;
+    }
+
+    /* ****************************************************************************************** */
+    /* **************************** MY STORY **********************************/
+    /* ****************************************************************************************** */
+
+    .story-v {
+        width: 1700px;
+        margin-left: -800px;
+    }
+
+    .story-h {
+        margin-left: 0px;
+    }
+
+    .about-canvas {
+        margin-left: 100px;
+    }
+
+    .about-text {
+        padding-left: 110px;
+    }
+
+    /* ****************************************************************************************** */
+    /* **************************** Experiences **********************************/
+    /* ****************************************************************************************** */
+
+    .graph-greyarea {
+        width: 70%;
+    }
+
+    .graph-colorarea {
+        width: 55%;
+    }
+
+    .second-color {
+        width: 50%;
+    }
+
+    .skills-h {
+        max-width: 400px;
+        margin-left: 300px;
+    }
+
+    .skills-v {
+        width: 1300px;
+        margin-right: -600px;
+    }
+
+    .skills-canvas-section {
+        padding-left: 0px;
+        margin-left: 20px;
+    }
+
+    .skills-text-half {
+        margin: 0;
+        margin-left: 20px;
+        margin-top: 60px;
+    }
+
+    .behind-title-skill {
+        left: 20vw;
+        top: 815px;
+    }
+
+
+}
+
+@media screen and (max-width: 600px) {
+
+    /* ****************************************************************************************** */
+    /* **************************** GALLERY **********************************/
+    /* ****************************************************************************************** */
+
+    .behind-title {
+        left: 10vw;
+        top: 100px;
+        font-size: 3em;
+    }
+
+    .title>h1 {
+        font-size: 3em;
+    }
+
+    .sub-title-text {
+        padding-top: 30px;
+        padding-right: 20px;
+    }
+
+    /* ****************************************************************************************** */
+    /* **************************** MY STORY **********************************/
+    /* ****************************************************************************************** */
+
+    .about-p>header {
+        font-size: 3em;
+    }
+
+    .behind-title-left {
+        font-size: 3em;
+        left: 55%;
+        top: 651px;
+    }
+
+    .story-v {
+        width: 1175px;
+        margin-left: -560px;
+    }
+
+    .about-canvas {
+        margin-left: 60px;
+    }
+
+    .about-text {
+        padding-left: 25px;
+    }
+
+    /* ****************************************************************************************** */
+    /* **************************** Experiences **********************************/
+    /* ****************************************************************************************** */
+
+
+    .skill-header>header {
+        font-size: 3rem;
+    }
+
+    .behind-title-skill {
+        font-size: 3rem;
+        left: 10vw;
+        top: 815px;
+    }
+
+    .skills-individual-template {
+        margin-left: -50px;
+        margin-top: 40px;
+    }
+
+    .skills-text-half {
+        margin-left: 0px;
+    }
+
+    .skills-v {
+        margin-right: -615px;
+    }
+
+    .skills-h {
+        margin-left: 285px;
+    }
+
+    .experiences-container {
+        padding-right: 5%;
+    }
+
+    .exp-small {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .graph-greyarea {
+        width: 85%;
+    }
+
+    .graph-colorarea {
+        width: 75%;
+    }
+
+    .second-color {
+        width: 70%;
+    }
+
+
+
+
+
+
+
+}

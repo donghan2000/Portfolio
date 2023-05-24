@@ -24,7 +24,7 @@ export default function Contact() {
 
             const globe = globeRef.current;
 
-            globe.bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png');
+            // globe.bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png');
             globe.hexPolygonsData(countries.features);
             globe.hexPolygonResolution(3);
             globe.hexPolygonMargin(0.3);
@@ -105,7 +105,6 @@ export default function Contact() {
         </>
     }
 
-    const fontRef = useRef()
 
     const handleEmailClick = (e) => {
         e.preventDefault();
@@ -173,12 +172,12 @@ export default function Contact() {
 
 
                 <div className='contact-canvas'>
-                    <Canvas camera={{ position: [30, -2, -5] }}>
+                    <Canvas performance={{ max: 0.1 }} camera={{ position: [30, -2, -5] }}>
                         <directionalLight position={[-80, 200, 40]} intensity={0.8} color="#D61424" />
                         <directionalLight position={[-20, 50, 20]} intensity={1} color="#D61424" />
                         <directionalLight position={[-20, 50, 20]} intensity={0.5} color="#D61424" />
                         <OrbitControls enableZoom={false} />
-                        <Globe ref={fontRef} scale={0.1} />
+                        <Globe scale={0.1} />
                         <ambientLight />
                     </Canvas>
 

@@ -13,7 +13,6 @@ export default function Gallery() {
     const [modal, setModal] = useState(false);
     const [openedModal, setOpen] = useState(0)
 
-
     const onEnter = (i) => {
         setIsHovering(true);
         setHovered(i);
@@ -56,7 +55,7 @@ export default function Gallery() {
                 </div>
 
                 <div className="work-main">
-                    <Slider items={items} width={700} visible={3} setActiveIndex={setActiveIndex} setModal={setModal}>
+                    <Slider items={items} width={700} visible={4} setActiveIndex={setActiveIndex} setModal={setModal}>
                         {({ imageUrl, Title }, i) => (
                             <div className="work-content">
                                 <div className="work-marker">{Title}</div>
@@ -118,8 +117,8 @@ export default function Gallery() {
                                 <p>{items[openedModal].thirdParagraph}</p>
                             </div>
 
-                            <a class="pro-link" href={items[openedModal].linkGoto} target="_blank">{items[openedModal].linkText}</a>
-                            <a class="pro-link" href={items[openedModal].linkSecondGoto} target="_blank">{items[openedModal].linkSecondText}</a>
+                            <a className="pro-link" href={items[openedModal].linkGoto} target="_blank">{items[openedModal].linkText}</a>
+                            <a className="pro-link" href={items[openedModal].linkSecondGoto} target="_blank">{items[openedModal].linkSecondText}</a>
 
                         </div>
 

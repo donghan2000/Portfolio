@@ -1,33 +1,28 @@
-import React, { useMemo, useCallback, useRef } from 'react';
+import React, { useMemo, useCallback, useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useFrame } from '@react-three/fiber';
-import { Points, PointMaterial, Edges } from '@react-three/drei';
+import { Points, PointMaterial, Edges, PerformanceMonitor } from '@react-three/drei';
 import { inSphere } from 'maath/random';
-import { EffectComposer, Bloom } from '@react-three/postprocessing';
+import { EffectComposer } from '@react-three/postprocessing';
 import { Link } from 'react-scroll';
 
 export default function Masthead() {
 
+    const [dpr, setDpr] = useState(1.5)
 
     return <>
         <section className='section-masthead' id='hero' >
 
             <div className='masthead-canvas'>
-                <Canvas camera={{ position: [0, 0, 1] }}>
-                    <Stars />
-                    <group position={[0.6, 0, 0]}>
-                        <DotSphere />
-                    </group>
-                    <ambientLight />
-                    <EffectComposer>
-                        {/* <Bloom
-                                mipmapBlur
-                                intensity={1}
-                                luminanceThreshold={0}
-                                luminanceSmoothing={0.1}
-
-                            /> */}
-                    </EffectComposer>
+                <Canvas dpr={dpr} performance={{ max: 0.1 }} camera={{ position: [0, 0, 1] }}>
+                    <PerformanceMonitor onIncline={() => setDpr(2)} onDecline={() => setDpr(1)} >
+                        <Stars />
+                        <group position={[0.6, 0, 0]}>
+                            <DotSphere />
+                        </group>
+                        {/* <ambientLight /> */}
+                        <EffectComposer></EffectComposer>
+                    </PerformanceMonitor>
                 </Canvas>
             </div>
 
@@ -50,7 +45,7 @@ export default function Masthead() {
 
 const Stars = React.memo((props) => {
     const ref = useRef();
-    const spherePositions = useMemo(() => inSphere(new Float32Array(5000), { radius: 1.5 }), []);
+    const spherePositions = useMemo(() => inSphere(new Float32Array(3000), { radius: 1.5 }), []);
     useFrame((state, delta) => {
         ref.current.rotation.x -= delta / 10;
         ref.current.rotation.y -= delta / 15;
@@ -58,7 +53,7 @@ const Stars = React.memo((props) => {
     return (
         <group rotation={[0, 0, Math.PI / 4]}>
             <Points ref={ref} positions={spherePositions} stride={3} frustumCulled={false} {...props}>
-                <PointMaterial transparent color="#d61424" size={0.005} sizeAttenuation={true} depthWrite={false} />
+                <PointMaterial transparent color="#D61424" size={0.005} sizeAttenuation={true} depthWrite={false} />
             </Points>
         </group>
     );

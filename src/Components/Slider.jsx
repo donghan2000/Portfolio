@@ -16,7 +16,7 @@ const styles = {
  * @param {number} width - fixed item with
  * @param {number} visible - number of items that muste be visible on screen
  */
-export function Slider({ items, width = 600, visible = 4, style, children, setActiveIndex, setModal }) {
+export function Slider({ items, width = 787, visible = 4, style, children, setActiveIndex, setModal }) {
     const idx = useCallback((x, l = items.length) => (x < 0 ? x + l : x) % l, [items])
     const getPos = useCallback((i, firstVis, firstVisIdx) => idx(i - firstVis + firstVisIdx), [idx])
     const [springs, api] = useSprings(

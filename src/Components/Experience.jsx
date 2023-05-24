@@ -13,7 +13,7 @@ export default function Experience() {
             <div className='skills-canvas-section'>
 
                 <div className='skills-individual-template'>
-                    <Canvas shadows dpr={1.5} camera={{ position: [-6, 22, -15], fov: 55 }}>
+                    <Canvas performance={{ max: 0.1 }} shadows dpr={1.5} camera={{ position: [-6, 22, -15], fov: 55 }}>
                         <Stage />
                         {skillsets.map((skillset, i) => (
                             <Stair
@@ -60,7 +60,7 @@ export default function Experience() {
                                     <p>NTUC Fairprice</p>
                                     <p>2017-2017</p>
                                 </div>
-                                <div className='exp-small'>
+                                <div className='exp-small '>
                                     <p>Better Trade Off</p>
                                     <p>2019-2019</p>
                                 </div>
@@ -70,7 +70,7 @@ export default function Experience() {
                                     <p>IDENTIV</p>
                                     <p>2018-2018</p>
                                 </div>
-                                <div className='exp-small'>
+                                <div className='exp-small exp-second'>
                                     <p>48 SAR ( NS )</p>
                                     <p>2020-2022</p>
                                 </div>
@@ -112,12 +112,10 @@ function Stair({ textureUrl: initialTextureUrl, ...props }) {
 
     const handleMouseOver = () => {
         setHovered(true);
-        // textureUrl.endsWith('.png') && setTextureUrl(textureUrl.replace('.png', '3.png'));
     };
 
     const handleMouseOut = () => {
         setHovered(false);
-        // textureUrl.endsWith('.png') && setTextureUrl(textureUrl.replace('3.png', '.png'));
     };
 
     useFrame((state) =>

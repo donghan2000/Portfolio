@@ -1,11 +1,15 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from 'react-scroll'
 
 export default function Sidebar() {
+
     return <>
         <NavBar />
+        <Hamburger />
     </>
 }
+
+
 
 
 function NavBar() {
@@ -14,8 +18,6 @@ function NavBar() {
     const navItems = ["Home", "Portfolio", "My Story", "Skills", "Contact Me"]; // replace with your own navItems
     const navIcons = ["home", "briefcase-alt-2", "user-pin", "terminal", "megaphone"]
     const navTo = ["hero", "portfolio", "story", "skills", "contact"]
-
-
 
 
     const [navOpen, setNavOpen] = useState(false);
@@ -35,12 +37,53 @@ function NavBar() {
         window.open("http://donghan.co/Resume.pdf", '_blank');
     };
 
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentPosition = window.pageYOffset;
+
+            if (currentPosition > 0 && currentPosition < 600) {
+                setActiveNavItem(0)
+            } else if (currentPosition > 600 && currentPosition < 1200) {
+                setActiveNavItem(1)
+            } else if (currentPosition > 1200 && currentPosition < 2000) {
+                setActiveNavItem(2)
+            } else if (currentPosition > 2000 && currentPosition < 2800) {
+                setActiveNavItem(3)
+            } else if (currentPosition > 2800 && currentPosition < 3800) {
+                setActiveNavItem(4)
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    const [isVisible, setIsVisible] = useState(true);
+
+    useEffect(() => {
+        function handleResize() {
+            if (window.innerWidth < 768) { // Change 768 to your desired breakpoint
+                setIsVisible(false);
+            } else {
+                setIsVisible(true);
+            }
+        }
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
 
-    return (
+
+    return isVisible ? <>
         <div className={navOpen ? 'sidebar open' : 'sidebar'}>
             <div className="logo">
-                <img src="./img/logo.svg" alt="logo" />
+                <img src="./img/logo-test2.png" alt="logo" />
                 <h3>Dong Han</h3>
             </div>
             <nav>
@@ -52,7 +95,7 @@ function NavBar() {
                 <ul>
                     {navItems.map((item, index) => (
 
-                        <Link to={`${navTo[index]}`} spy={true} smooth={true} offset={-10} duration={500} >
+                        <Link key={index} to={`${navTo[index]}`} spy={true} smooth={true} offset={-10} duration={500} >
                             <li
                                 key={index}
                                 className={`nav-item ${activeNavItem === index ? "active" : ""}`}
@@ -75,5 +118,62 @@ function NavBar() {
                 </ul>
             </nav>
         </div>
-    );
+    </> : null;
+}
+
+function Hamburger() {
+
+    const [isHamburger, setHamburger] = useState(false);
+
+    const navItems = ["Home", "Portfolio", "My Story", "Skills", "Contact Me"]; // replace with your own navItems
+    const navTo = ["hero", "portfolio", "story", "skills", "contact"]
+    const [isChecked, setIsChecked] = useState(false);
+
+    const handleCheckboxChange = (event) => {
+        setIsChecked(event.target.checked);
+        document.body.classList.toggle("no-scroll", event.target.checked);
+    };
+
+    const navlistClicked = (event) => {
+        setIsChecked(false)
+        document.body.classList.toggle("no-scroll", event.target.checked);
+    };
+
+
+    useEffect(() => {
+        function hamburgerAppear() {
+            if (window.innerWidth < 768) { // Change 768 to your desired breakpoint
+                setHamburger(true);
+            } else {
+                setHamburger(false);
+            }
+        }
+        hamburgerAppear();
+        window.addEventListener('resize', hamburgerAppear);
+        return () => window.removeEventListener('resize', hamburgerAppear);
+    }, []);
+
+    return isHamburger ? <>
+        {/* Put hamburger code here */}
+        <div className="hamburger">
+            <input className="menu-icon" type="checkbox" id="menu-icon" name="menu-icon" checked={isChecked} onChange={handleCheckboxChange} />
+            <label className="x-hamburger" htmlFor="menu-icon"></label>
+            <nav className="nav">
+                <ul className="pt-5">
+
+                    {navItems.map((item, index) => (
+
+                        <Link key={index} to={`${navTo[index]}`} spy={true} smooth={true} offset={-10} duration={500} >
+                            <li
+                                key={index}
+                                onClick={navlistClicked}
+                            >
+                                <p>{item}</p>
+                            </li>
+                        </Link>
+                    ))}
+                </ul>
+            </nav>
+        </div>
+    </> : null;
 }
