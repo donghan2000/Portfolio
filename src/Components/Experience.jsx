@@ -1,8 +1,9 @@
 import { useState, useRef } from 'react'
 import { Canvas, useFrame, useLoader } from '@react-three/fiber'
-import { BakeShadows, useCursor, Loader } from '@react-three/drei'
+import { BakeShadows, useCursor } from '@react-three/drei'
 import { TextureLoader } from 'three'
-import { skillsets } from './Informations/Skillset'
+import { skillsets } from './Assets/Skillset'
+import { Perf } from "r3f-perf";
 
 export default function Experience() {
 
@@ -14,6 +15,7 @@ export default function Experience() {
 
                 <div className='skills-individual-template'>
                     <Canvas performance={{ max: 0.1 }} shadows dpr={1.5} camera={{ position: [-6, 22, -15], fov: 55 }}>
+                        {/* <Perf position="top-left" /> */}
                         <Stage />
                         {skillsets.map((skillset, i) => (
                             <Stair
@@ -31,7 +33,6 @@ export default function Experience() {
                             />
                         ))}
                     </Canvas>
-                    <Loader />
                 </div>
 
                 <div className='crosses-r'>
@@ -128,7 +129,6 @@ function Stair({ textureUrl: initialTextureUrl, ...props }) {
         <mesh
             {...props}
             ref={ref}
-            receiveShadow
             castShadow
             onClick={(e) => { e.stopPropagation(); setClicked(!clicked) }}
             onPointerOver={(e) => { e.stopPropagation(); handleMouseOver() }}

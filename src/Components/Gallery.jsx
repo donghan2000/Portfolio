@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { a } from '@react-spring/web'
 import { Slider } from './Slider'
-import { items } from './Informations/items'
+import { items } from './Assets/items'
 
 
 

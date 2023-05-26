@@ -1,25 +1,27 @@
 import * as THREE from 'three';
 import ThreeGlobe from 'three-globe';
-import React, { useRef, useLayoutEffect } from 'react'
+import React, { useRef, useLayoutEffect, useEffect, useState } from 'react'
 import { Canvas, extend, useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import countries from "./Informations/custom.geo.json";
-import lines from "./Informations/lines.json";
-import map from "./Informations/map.json";
-import rings from "./Informations/rings.json";
+import countries from "./Assets/custom.geo.json";
+import lines from "./Assets/lines.json";
+import map from "./Assets/map.json";
+import rings from "./Assets/rings.json";
+import { useInView } from 'react-intersection-observer';
 
 
 export default function Contact() {
 
-
     extend({ ThreeGlobe })
+
+    const [canvasRef, inView] = useInView({ threshold: 0 });
 
     const Globe = (props) => {
         // This reference will give us direct access to the ThreeGlobe class
         const globeRef = useRef()
 
         // An effect that runs after three.js elements are created but before render
-        useLayoutEffect(() => {
+        useEffect(() => {
             // Configure the globe
 
             const globe = globeRef.current;
@@ -90,7 +92,7 @@ export default function Contact() {
 
             }, 1000)
 
-        }, [])
+        }, []);
 
         useFrame((state, delta) => {
             // globeRef.current.rotation.y += delta * 0.01
@@ -110,6 +112,34 @@ export default function Contact() {
         e.preventDefault();
         window.location.href = 'mailto:donghan20002@gmail.com';
     };
+
+    const [scale, setScale] = useState();
+
+    useEffect(() => {
+        const handleResize = () => {
+            let newScale = 0.15; // Default scale
+
+            if (window.innerWidth < 1670) {
+                newScale = 0.13;
+            } else if (window.innerWidth < 1280) {
+                newScale = 0.2;
+            } else if (window.innerWidth < 767) {
+                newScale = 0.1;
+            }
+
+            setScale(newScale);
+        };
+
+        handleResize(); // Call handleResize when the component mounts
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+
 
     return <>
         <section className='section-dividers' >
@@ -171,15 +201,17 @@ export default function Contact() {
                 </div>
 
 
-                <div className='contact-canvas'>
-                    <Canvas performance={{ max: 0.1 }} camera={{ position: [30, -2, -5] }}>
-                        <directionalLight position={[-80, 200, 40]} intensity={0.8} color="#D61424" />
-                        <directionalLight position={[-20, 50, 20]} intensity={1} color="#D61424" />
-                        <directionalLight position={[-20, 50, 20]} intensity={0.5} color="#D61424" />
-                        <OrbitControls enableZoom={false} />
-                        <Globe scale={0.1} />
-                        <ambientLight />
-                    </Canvas>
+                <div ref={canvasRef} className='contact-canvas'>
+                    {inView && (
+                        <Canvas performance={{ max: 0.1 }} camera={{ position: [30, -2, -5] }}>
+                            <directionalLight position={[-80, 200, 40]} intensity={0.8} color="#D61424" />
+                            <directionalLight position={[-20, 50, 20]} intensity={1} color="#D61424" />
+                            <directionalLight position={[-20, 50, 20]} intensity={0.5} color="#D61424" />
+                            <OrbitControls enableZoom={false} />
+                            <Globe scale={scale} />
+                            <ambientLight />
+                        </Canvas>
+                    )}
 
                     <div className='address'>
                         <div className='add-text'>

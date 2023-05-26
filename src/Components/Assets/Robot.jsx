@@ -6,9 +6,10 @@ export default function Robot(props) {
     const { nodes, materials } = useGLTF("./models/Robot-Test.gltf");
     return <>
 
-        <Environment preset="studio" />
+        {/* <Environment preset="studio" /> */}
+        <Environment near={1} far={1000} resolution={256} preset="city" />
 
-        <group {...props} dispose={null}>
+        <group rotation={[0.3, 0, 0]} {...props} dispose={null}>
 
             <group rotation={[0, 0, -Math.PI / 2]}>
                 <mesh
