@@ -62,7 +62,7 @@ export default function RoCanvas() {
                 geometry={torusGeometry}
                 material={material}
                 position={[
-                    (Math.random() - 0.5) * 20,
+                    (Math.random() - 0.5) * 15,
                     (Math.random() - 0.5) * 15,
                     (Math.random()) * -5
                 ]}

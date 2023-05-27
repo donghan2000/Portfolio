@@ -28,6 +28,10 @@
   display: none;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 html,
 body,
 #root {
@@ -665,8 +669,9 @@ a.button:hover {
   color: rgba(255, 255, 255, 0.04);
   font-weight: 700;
   letter-spacing: -5px;
-  left: 49%;
-  top: 825px;
+  left: 36%;
+  top: 60px;
+
 }
 
 .behind-title-skill {
@@ -880,12 +885,14 @@ a.button:hover {
 
 
 .work-modal {
-  height: 80%;
-  width: 85%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  height: 90%;
+  width: 80%;
+  margin-top: 5%;
+  margin-left: 15%;
+  margin-right: 10%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
   border-radius: 1%;
   display: none;
   color: #D61424;
@@ -913,7 +920,6 @@ a.button:hover {
 
 .work-modal-div {
   width: 50%;
-  height: 730px;
   overflow-y: scroll;
 }
 
@@ -924,7 +930,6 @@ a.button:hover {
 .works-modal-title {
   width: 50%;
   padding: 2%;
-  height: 730px;
   overflow-y: scroll;
   border-left: 2px solid #D61424;
 }
@@ -996,6 +1001,21 @@ a.button:hover {
   transition: opacity 0.4s;
 }
 
+section#story {
+  margin-top: 100px;
+}
+
+section#portfolio {
+  margin-top: 100px;
+}
+
+section#skills {
+  margin-top: 100px;
+}
+
+section#contact {
+  margin-top: 100px;
+}
 
 .about-div {
   display: flex;
@@ -1077,7 +1097,7 @@ a.button:hover {
 
 .skills-individual-template {
   width: 600px !important;
-  height: 900px;
+  height: 850px;
   border: 1px solid red;
 }
 
@@ -1216,7 +1236,7 @@ a.button:hover {
   font-weight: 700;
   color: #d61424;
   font-size: 4em;
-  margin-top: 50px;
+  margin-top: 130px;
 }
 
 .contact-sub-text {

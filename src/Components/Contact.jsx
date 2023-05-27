@@ -26,7 +26,6 @@ export default function Contact() {
 
             const globe = globeRef.current;
 
-            // globe.bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png');
             globe.hexPolygonsData(countries.features);
             globe.hexPolygonResolution(3);
             globe.hexPolygonMargin(0.3);
@@ -37,7 +36,6 @@ export default function Contact() {
 
             // Change surface color
             globe.globeMaterial().color = new THREE.Color('#1D1D1D');
-            globe.globeMaterial().emissive = new THREE.Color('white')
             globe.globeMaterial().emissiveIntensity = 0.1;
             globe.showGlobe(false);
 
@@ -142,14 +140,14 @@ export default function Contact() {
 
 
     return <>
-        <section className='section-dividers' >
+        <section className='section-dividers' id='contact' >
 
             <div className='crosses-l'>
                 <div className='horizontal story-h'></div>
                 <div className='vertical story-v'></div>
             </div>
 
-            <div className='contact-div' id='contact'>
+            <div className='contact-div' >
 
                 <div className='contact-form'>
                     <div className='contact-p'>

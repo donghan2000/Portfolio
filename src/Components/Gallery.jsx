@@ -26,15 +26,57 @@ export default function Gallery() {
         console.log("modal " + i + " is open");
         setOpen(i);
         setModal(true);
-
+        // document.body.classList.add('modal-open');
     }
 
     const closeModal = (event) => {
         setModal(false);
+        // document.body.classList.remove('modal-open');
     }
 
 
     return <>
+
+        <div items={items} className='work-modal'
+            style={{ display: modal ? "block" : "none" }}
+        >
+
+            <button onClick={() => closeModal()} className='works-close-button'>
+                <span className='modal-close'>x</span>
+            </button>
+
+            <div className='work-flex-div'>
+
+                <div className='work-modal-div'>
+                    <img className='work-modal-images' src={items[openedModal].workContentImage} alt='gallery-images' />
+                </div>
+
+                <div className='works-modal-title'>
+                    <h1>{items[openedModal].Title}</h1>
+
+                    <div className='modal-para'>
+                        <p>{items[openedModal].firstParagraph}</p>
+                    </div>
+
+                    <div className='modal-para'>
+                        <p>{items[openedModal].secondParagraph}</p>
+                    </div>
+
+                    <div className='modal-para'>
+                        <p>{items[openedModal].thirdParagraph}</p>
+                    </div>
+
+                    <a className="pro-link" href={items[openedModal].linkGoto} target="_blank">{items[openedModal].linkText}</a>
+                    <a className="pro-link" href={items[openedModal].linkSecondGoto} target="_blank">{items[openedModal].linkSecondText}</a>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
         <section className='section-dividers' id='portfolio'>
             <div className="work-flex fill center work-container" >
 
@@ -88,45 +130,7 @@ export default function Gallery() {
                     </Slider>
                 </div>
 
-                <div items={items} className='work-modal'
-                    style={{ display: modal ? "block" : "none" }}
-                >
 
-                    <button onClick={() => closeModal()} className='works-close-button'>
-                        <span className='modal-close'>x</span>
-                    </button>
-
-                    <div className='work-flex-div'>
-
-                        <div className='work-modal-div'>
-                            <img className='work-modal-images' src={items[openedModal].workContentImage} alt='gallery-images' />
-                        </div>
-
-                        <div className='works-modal-title'>
-                            <h1>{items[openedModal].Title}</h1>
-
-                            <div className='modal-para'>
-                                <p>{items[openedModal].firstParagraph}</p>
-                            </div>
-
-                            <div className='modal-para'>
-                                <p>{items[openedModal].secondParagraph}</p>
-                            </div>
-
-                            <div className='modal-para'>
-                                <p>{items[openedModal].thirdParagraph}</p>
-                            </div>
-
-                            <a className="pro-link" href={items[openedModal].linkGoto} target="_blank">{items[openedModal].linkText}</a>
-                            <a className="pro-link" href={items[openedModal].linkSecondGoto} target="_blank">{items[openedModal].linkSecondText}</a>
-
-                        </div>
-
-
-
-                    </div>
-
-                </div>
 
 
                 <div className="nav-works-index">

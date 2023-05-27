@@ -98,8 +98,9 @@
 
     .skills-individual-template {
         width: 500px !important;
-        height: 900px;
+        height: 850px;
         margin-bottom: 50px;
+        margin-top: 50px;
     }
 
     /* ****************************************************************************************** */
@@ -116,6 +117,7 @@
 
     .contact-canvas {
         width: 550px;
+        margin-right: 30px;
     }
 
 }
@@ -155,7 +157,8 @@
 
     .skills-individual-template {
         width: 450px !important;
-        margin-top: 30px;
+        margin-top: 80px;
+        height: 820px;
     }
 
     .contact-p {
@@ -187,6 +190,9 @@
         max-width: 600px;
         padding-top: 40px;
     }
+
+
+
 
     /* ****************************************************************************************** */
     /* **************************** MY STORY **********************************/
@@ -307,6 +313,15 @@
     .address {
         bottom: 811px;
         right: 49px;
+    }
+
+    .contact-p>header {
+        margin-top: 50px;
+    }
+
+    .behind-title-contact {
+        left: 43%;
+        top: 810px;
     }
 
 
@@ -454,19 +469,6 @@
 
     }
 
-    .work-marker {
-        left: 50%;
-        transform: translate3d(-50%, -50%, 0);
-        margin-left: -90px;
-    }
-
-    .works-gallery-image {
-        background-size: cover !important;
-    }
-
-    .work-circle {
-        margin-left: -90px;
-    }
 
     /* ****************************************************************************************** */
     /* **************************** MY STORY **********************************/
@@ -685,10 +687,6 @@
         bottom: 684px;
         right: 50px;
     }
-
-
-
-
 
 
 

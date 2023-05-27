@@ -4,8 +4,11 @@ import { BakeShadows, useCursor } from '@react-three/drei'
 import { TextureLoader } from 'three'
 import { skillsets } from './Assets/Skillset'
 import { Perf } from "r3f-perf";
+import { useInView } from 'react-intersection-observer';
 
 export default function Experience() {
+
+    const [canvasRef, inView] = useInView({ threshold: 0 });
 
 
     return <>
@@ -13,26 +16,28 @@ export default function Experience() {
 
             <div className='skills-canvas-section'>
 
-                <div className='skills-individual-template'>
-                    <Canvas performance={{ max: 0.1 }} shadows dpr={1.5} camera={{ position: [-6, 22, -15], fov: 55 }}>
-                        {/* <Perf position="top-left" /> */}
-                        <Stage />
-                        {skillsets.map((skillset, i) => (
-                            <Stair
-                                key={i}
-                                rotation={[-(-Math.PI / 2), 0, i / Math.PI / 2]}
-                                position={[
+                <div ref={canvasRef} className='skills-individual-template'>
+                    {inView && (
+                        <Canvas performance={{ max: 0.1 }} shadows dpr={1.5} camera={{ position: [-6, 22, -15], fov: 55 }}>
+                            {/* <Perf position="top-left" /> */}
+                            <Stage />
+                            {skillsets.map((skillset, i) => (
+                                <Stair
+                                    key={i}
+                                    rotation={[-(-Math.PI / 2), 0, i / Math.PI / 2]}
+                                    position={[
 
-                                    -(4 - Math.sin(i / 5) * (6 + 2)),
-                                    i * 0.5,
-                                    2 - Math.cos(i / 5) * (6 + 2)
+                                        -(4 - Math.sin(i / 5) * (6 + 2)),
+                                        i * 0.5,
+                                        2 - Math.cos(i / 5) * (6 + 2)
 
-                                ]}
-                                textureUrl={skillset.imageUrl}
+                                    ]}
+                                    textureUrl={skillset.imageUrl}
 
-                            />
-                        ))}
-                    </Canvas>
+                                />
+                            ))}
+                        </Canvas>
+                    )}
                 </div>
 
                 <div className='crosses-r'>

@@ -5,20 +5,25 @@ import { Points, PointMaterial, Edges } from '@react-three/drei';
 import { inSphere } from 'maath/random';
 import { Link } from 'react-scroll';
 import { Perf } from "r3f-perf";
+import { useInView } from 'react-intersection-observer';
 
 
 export default function Masthead() {
 
-    return (
+    const [canvasRef, inView] = useInView({ threshold: 0 });
+
+    return <>
         <section className='section-masthead' id='hero'>
-            <div className='masthead-canvas'>
-                <Canvas dpr={1.5} performance={{ max: 0.1 }} camera={{ position: [0, 0, 1] }}>
-                    {/* <Perf position="top=left" /> */}
-                    <Stars />
-                    <group position={[0.6, 0, 0]}>
-                        <DotSphere />
-                    </group>
-                </Canvas>
+            <div ref={canvasRef} className='masthead-canvas'>
+                {inView && (
+                    <Canvas dpr={1.5} performance={{ max: 0.1 }} camera={{ position: [0, 0, 1] }}>
+                        {/* <Perf position="top=left" /> */}
+                        <Stars />
+                        <group position={[0.6, 0, 0]}>
+                            <DotSphere />
+                        </group>
+                    </Canvas>
+                )}
             </div>
 
             <div className='masthead-div'>
@@ -35,7 +40,7 @@ export default function Masthead() {
                 </div>
             </div>
         </section>
-    );
+    </>
 }
 
 const Stars = React.memo((props) => {
@@ -69,9 +74,9 @@ const DotSphere = React.memo(({ cutterPos = [0, 0, 0], ...props }) => {
         <mesh dispose={null} scale={0.2} rotation={[2, 2, 0]}>
             <mesh ref={cutterRef} position={cutterPos}>
                 <icosahedronGeometry args={[2, 2]} />
-                <meshBasicMaterial transparent opacity={0} />
+                <meshBasicMaterial transparent opacity={0} toneMapped={false} />
                 <Edges scale={1} threshold={11.2}>
-                    <lineBasicMaterial color={[0.5, 0, 0]} />
+                    <lineBasicMaterial color={[1, 0, 0]} toneMapped={false} />
                 </Edges>
             </mesh>
         </mesh>

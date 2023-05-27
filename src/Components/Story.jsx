@@ -40,7 +40,9 @@ export default function Story() {
                 </div>
 
                 <Canvas ref={canvasRef} className='about-canvas'>
-                    <RoCanvas />
+                    {inView && (
+                        <RoCanvas />
+                    )}
                 </Canvas>
             </div>
 
