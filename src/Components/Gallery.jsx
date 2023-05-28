@@ -26,12 +26,12 @@ export default function Gallery() {
         console.log("modal " + i + " is open");
         setOpen(i);
         setModal(true);
-        // document.body.classList.add('modal-open');
+        document.body.classList.add('modal-open');
     }
 
     const closeModal = (event) => {
         setModal(false);
-        // document.body.classList.remove('modal-open');
+        document.body.classList.remove('modal-open');
     }
 
 
