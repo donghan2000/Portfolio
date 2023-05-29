@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Canvas, useFrame, useLoader } from '@react-three/fiber'
 import { BakeShadows, useCursor } from '@react-three/drei'
 import { TextureLoader } from 'three'
@@ -10,15 +10,31 @@ export default function Experience() {
 
     const [canvasRef, inView] = useInView({ threshold: 0 });
 
+    const [addClass, setAddClass] = useState(false);
+    console.log(window.scrollY)
+    const handleScroll = () => {
+        if (window.scrollY > 2700) {
+            setAddClass(true);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
 
     return <>
         <section className='section-dividers' id='skills'>
 
             <div className='skills-canvas-section'>
 
-                <div ref={canvasRef} className='skills-individual-template'>
+                <div ref={canvasRef} className={`skills-individual-template ${addClass ? 'animate__animated animate__fadeIn' : ''}`}>
                     {inView && (
-                        <Canvas performance={{ max: 0.1 }} shadows dpr={1.5} camera={{ position: [-6, 22, -15], fov: 55 }}>
+                        <Canvas className='animate__animated animate__fadeIn' performance={{ max: 0.1 }} shadows dpr={1.5} camera={{ position: [-6, 22, -15], fov: 55 }}>
                             {/* <Perf position="top-left" /> */}
                             <Stage />
                             {skillsets.map((skillset, i) => (
@@ -48,19 +64,18 @@ export default function Experience() {
                 <div className='skills-text-half'>
                     <div className='skills-experience-text-title'>
 
-                        <div className='skill-header'>
+                        <div className={`skill-header ${addClass ? 'animate__animated animate__fadeIn' : ''}`}>
                             <header>My Skills</header>
                             <p>I am passionate about using my skills to contribute to meaningful projects and am excited about the opportunities that lie ahead.
                                 Here you will find a summary of my skills and expertise that I have acquired throughout my career.</p>
                         </div>
 
-                        <div className='behind-title-skill'>
+                        <div className={`behind-title-skill ${addClass ? 'animate__animated animate__fadeIn' : ''}`}>
                             <p>My Experiences</p>
                         </div>
 
-                        <header>Work Experiences</header>
-
-                        <div className='experiences-container'>
+                        <div className={`experiences-container ${addClass ? 'animate__animated animate__fadeIn animate__delay-1s' : ''}`}>
+                            <header>Work Experiences</header>
                             <div className='experiences-row-1'>
                                 <div className='exp-small'>
                                     <p>NTUC Fairprice</p>
@@ -84,7 +99,7 @@ export default function Experience() {
                         </div>
 
                     </div>
-                    <div className='skills-proficiencies-text-title'>
+                    <div className={`skills-proficiencies-text-title ${addClass ? 'animate__animated animate__fadeIn animate__delay-2s' : ''}`}>
                         <header>Proficiencies</header>
 
                         <div className='proficiency-graph'>
@@ -92,6 +107,7 @@ export default function Experience() {
                             <div className='graph-colorarea'></div>
                             <div className='graph-greyarea'></div>
                         </div>
+
 
                         <div className='proficiency-graph second-graph'>
                             <p className='graph-title'> Back End</p>

@@ -4,7 +4,7 @@ import './styles.css'
 import './mobile.css'
 import App from "./Components/App";
 import reportWebVitals from './reportWebVitals';
-
+import 'animate.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

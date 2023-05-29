@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { a } from '@react-spring/web'
 import { Slider } from './Slider'
 import { items } from './Assets/items'
@@ -12,6 +12,9 @@ export default function Gallery() {
     const [activeHovered, setHovered] = useState(0)
     const [modal, setModal] = useState(false);
     const [openedModal, setOpen] = useState(0)
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const [addClass, setAddClass] = useState(false);
+    const [addSecClass, setAddSecClass] = useState(false);
 
     const onEnter = (i) => {
         setIsHovering(true);
@@ -33,6 +36,33 @@ export default function Gallery() {
         setModal(false);
         document.body.classList.remove('modal-open');
     }
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollPosition(window.scrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+
+    }, []);
+
+    // console.log(scrollPosition)
+
+    // Add or remove the class based on the scroll position
+    useEffect(() => {
+        if (scrollPosition > 400) {
+            setAddClass(true);
+        }
+
+        if (scrollPosition > 500) {
+            setAddSecClass(true)
+        }
+
+    }, [scrollPosition]);
 
 
     return <>
@@ -85,18 +115,18 @@ export default function Gallery() {
                         <div className='horizontal gallery-h'></div>
                         <div className='vertical gallery-v'></div>
                     </div>
-                    <h1>My Portfolio</h1>
-                    <p className='behind-title'>
+                    <h1 className={`${addClass ? 'animate__animated animate__fadeIn' : ''}`}>My Portfolio</h1>
+                    <p className={`behind-title ${addClass ? 'animate__animated animate__fadeIn' : ''}`}>
                         My Works
                     </p>
-                    <div className='sub-title-text'>
+                    <div className={`sub-title-text ${addClass ? 'animate__animated animate__fadeIn' : ''}`}>
                         <p>My portfolio features a collection of website coding and design projects,
                             highlighting my skills in HTML, CSS, JavaScript, and responsive design.
                             Explore my work and see how I can bring your website to life.</p>
                     </div>
                 </div>
 
-                <div className="work-main">
+                <div className={`work-main ${addSecClass ? 'animate__animated animate__fadeInLeft opacity-class' : ''}`}>
                     <Slider items={items} width={700} visible={4} setActiveIndex={setActiveIndex} setModal={setModal}>
                         {({ imageUrl, Title }, i) => (
                             <div className="work-content">
@@ -133,7 +163,7 @@ export default function Gallery() {
 
 
 
-                <div className="nav-works-index">
+                <div className={`nav-works-index ${addSecClass ? 'animate__animated animate__fadeIn opacity-class' : ''}`}>
                     {items.map((item, i) => (
                         <div
                             key={i}

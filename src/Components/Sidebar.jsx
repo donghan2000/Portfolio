@@ -37,7 +37,6 @@ function NavBar() {
         window.open("http://donghan.co/Resume.pdf", '_blank');
     };
 
-    const [scrollPosition, setScrollPosition] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -49,9 +48,9 @@ function NavBar() {
                 setActiveNavItem(1)
             } else if (currentPosition > 1200 && currentPosition < 2000) {
                 setActiveNavItem(2)
-            } else if (currentPosition > 2000 && currentPosition < 2800) {
+            } else if (currentPosition > 2000 && currentPosition < 3000) {
                 setActiveNavItem(3)
-            } else if (currentPosition > 2800 && currentPosition < 3800) {
+            } else if (currentPosition > 3000 && currentPosition < 3800) {
                 setActiveNavItem(4)
             }
         };

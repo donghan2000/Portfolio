@@ -49,6 +49,7 @@ body,
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
+  --animate-delay: 0.7s;
 }
 
 canvas {
@@ -60,6 +61,14 @@ section {
   margin: 0 auto;
 }
 
+.opacity-class {
+  opacity: 1 !important;
+}
+
+
+/* ****************************************************************************************** */
+/* *********************************** Masthead ************************************************/
+/* ****************************************************************************************** */
 
 .masthead-canvas {
   width: 100%;
@@ -650,6 +659,7 @@ a.button:hover {
   letter-spacing: -5px;
   left: 59vw;
   top: 85px;
+  opacity: 0;
 }
 
 .behind-title-left {
@@ -660,7 +670,7 @@ a.button:hover {
   letter-spacing: -5px;
   left: 25%;
   top: 70px;
-
+  opacity: 0;
 }
 
 .behind-title-contact {
@@ -682,26 +692,7 @@ a.button:hover {
   letter-spacing: -5px;
   left: 57vw;
   top: 80px;
-
-}
-
-
-.title>h1 {
-  text-align: center;
-  font-weight: 700;
-  color: #d61424;
-  font-size: 4em;
-  margin-top: 170px;
-}
-
-.sub-title-text {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-  color: white;
-  padding-top: 30px;
-  line-height: 1.5;
-  padding-bottom: 30px;
+  opacity: 0;
 }
 
 
@@ -785,6 +776,26 @@ a.button:hover {
 /* ********************** PORTFOLIO CONTAINER ************************************************/
 /* ****************************************************************************************** */
 
+.title>h1 {
+  text-align: center;
+  font-weight: 700;
+  color: #d61424;
+  font-size: 4em;
+  margin-top: 170px;
+  opacity: 0;
+}
+
+.sub-title-text {
+  opacity: 0;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  padding-top: 30px;
+  line-height: 1.5;
+  padding-bottom: 30px;
+}
+
 
 
 .work-container {
@@ -797,6 +808,7 @@ a.button:hover {
   width: 100%;
   margin-top: 50px;
   touch-action: none;
+  opacity: 0;
 }
 
 .work-content {
@@ -833,6 +845,7 @@ a.button:hover {
   width: 175px;
   display: flex;
   justify-content: space-around;
+  opacity: 0;
 }
 
 .work-dot {
@@ -902,7 +915,8 @@ a.button:hover {
       rgba(29, 29, 29, 1) 100%);
   overflow: hidden;
   /* box-shadow: 0px 2px 10px 1px rgba(214, 20, 36, 1); */
-  border: 1px solid #d61424
+  border: 1px solid #d61424;
+
 }
 
 .work-modal h1 {
@@ -1035,6 +1049,7 @@ section#contact {
   margin-right: 50px;
   margin-top: 100px;
   border-radius: 2px;
+  opacity: 0;
 }
 
 .about-text {
@@ -1054,6 +1069,7 @@ section#contact {
   color: #d61424;
   font-size: 4em;
   margin-top: 60px;
+  opacity: 0;
 }
 
 .about-bubble-p>p {
@@ -1068,10 +1084,12 @@ section#contact {
 
 .about-p-right {
   float: right;
+  opacity: 0;
 }
 
 .about-p-left {
   float: left;
+  opacity: 0;
 }
 
 
@@ -1099,6 +1117,7 @@ section#contact {
   width: 600px !important;
   height: 850px;
   border: 1px solid red;
+  opacity: 0;
 }
 
 .skills-experience-text-title {
@@ -1118,6 +1137,10 @@ section#contact {
   margin-top: 30px;
 }
 
+.skill-header {
+  opacity: 0;
+}
+
 .skill-header>header {
   font-size: 4rem;
 }
@@ -1132,7 +1155,13 @@ section#contact {
   font-weight: 500;
 }
 
+.experiences-container {
+  opacity: 0;
+}
 
+.skills-proficiencies-text-title {
+  opacity: 0;
+}
 
 .experiences-row-1 {
   display: flex;

@@ -14,10 +14,9 @@ export default function Masthead() {
 
     return <>
         <section className='section-masthead' id='hero'>
-            <div ref={canvasRef} className='masthead-canvas'>
+            <div ref={canvasRef} className='masthead-canvas animate__animated animate__fadeIn animate__delay-2s'>
                 {inView && (
-                    <Canvas dpr={1.5} performance={{ max: 0.1 }} camera={{ position: [0, 0, 1] }}>
-                        {/* <Perf position="top=left" /> */}
+                    <Canvas className='animate__animated animate__fadeIn animate__delay-1s' dpr={1.5} performance={{ max: 0.1 }} camera={{ position: [0, 0, 1] }}>
                         <Stars />
                         <group position={[0.6, 0, 0]}>
                             <DotSphere />
@@ -28,11 +27,11 @@ export default function Masthead() {
 
             <div className='masthead-div'>
                 <div className='masthead-text'>
-                    <h1>DONG HAN</h1>
-                    <div className='masthead-tagline'>
+                    <h1 className='animate__animated animate__fadeInUp'>DONG HAN</h1>
+                    <div className='masthead-tagline animate__animated animate__fadeInUp'>
                         <p>Web Developer & UI / UX Designer</p>
                     </div>
-                    <div className='wrap'>
+                    <div className='wrap animate__animated animate__fadeInUp animate__delay-1s'>
                         <Link to='contact' spy={true} smooth={true} offset={-10} duration={500} className='button'>
                             CONTACT ME
                         </Link>
@@ -44,17 +43,16 @@ export default function Masthead() {
 }
 
 const Stars = React.memo((props) => {
-    const ref = useRef();
-    const spherePositions = useMemo(() => inSphere(new Float32Array(2000), { radius: 1.5 }), []);
-
+    const ref = useRef()
+    const [sphere] = useState(() => inSphere(new Float32Array(3000), { radius: 1.5 }))
     useFrame((state, delta) => {
-        ref.current.rotation.x -= delta / 10;
-        ref.current.rotation.y -= delta / 15;
-    });
+        ref.current.rotation.x -= delta / 10
+        ref.current.rotation.y -= delta / 15
+    })
 
     return (
         <group rotation={[0, 0, Math.PI / 4]}>
-            <Points ref={ref} positions={spherePositions} stride={3} frustumCulled={true} {...props}>
+            <Points ref={ref} positions={sphere} stride={3} frustumCulled={false} {...props}>
                 <PointMaterial transparent color={[0.5, 0, 0]} size={0.005} sizeAttenuation={true} depthWrite={false} />
             </Points>
         </group>
