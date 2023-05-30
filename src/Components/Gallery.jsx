@@ -126,7 +126,7 @@ export default function Gallery() {
                     </div>
                 </div>
 
-                <div className={`work-main ${addSecClass ? 'animate__animated animate__fadeInLeft opacity-class' : ''}`}>
+                <div className={`work-main ${addSecClass ? 'animate__animated animate__fadeInRight opacity-class' : ''}`}>
                     <Slider items={items} width={700} visible={4} setActiveIndex={setActiveIndex} setModal={setModal}>
                         {({ imageUrl, Title }, i) => (
                             <div className="work-content">

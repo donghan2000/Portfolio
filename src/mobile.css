@@ -381,6 +381,10 @@
         margin-left: -550px;
     }
 
+    .about-canvas {
+        width: 75% !important;
+    }
+
 }
 
 
@@ -441,6 +445,7 @@
     /* ****************************************************************************************** */
 
     .about-canvas {
+
         margin-left: 220px;
     }
 
@@ -636,6 +641,7 @@
     }
 
     .about-canvas {
+        width: 80% !important;
         margin-left: 100px;
     }
 

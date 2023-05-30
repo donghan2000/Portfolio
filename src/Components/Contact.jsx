@@ -58,8 +58,8 @@ export default function Contact() {
 
                 globe.arcDashLength(1)
                 globe.arcDashGap(4)
-                globe.arcDashAnimateTime(2000)
-                globe.arcsTransitionDuration(1000)
+                globe.arcDashAnimateTime(4000)
+                globe.arcsTransitionDuration(2000)
                 globe.arcDashInitialGap((e) => e.order * 1)
 
 
@@ -137,6 +137,23 @@ export default function Contact() {
         };
     }, []);
 
+    const [addClass, setAddClass] = useState(false);
+
+    const handleScroll = () => {
+        if (window.scrollY > 3400) {
+            setAddClass(true);
+        }
+    };
+
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
 
 
     return <>
@@ -149,21 +166,21 @@ export default function Contact() {
 
             <div className='contact-div' >
 
-                <div className='contact-form'>
-                    <div className='contact-p'>
-                        <header>My Contact</header>
+                <div className="contact-form">
+                    <div className={`contact-p ${addClass ? 'animate__animated animate__fadeIn animate__delay-2s' : ''}`}>
+                        <header >My Contact</header>
                         <div className='behind-title-contact'>
                             <p>My @</p>
                         </div>
                     </div>
 
-                    <div className='contact-sub-text'>
+                    <div className={`contact-sub-text ${addClass ? 'animate__animated animate__fadeIn animate__delay-2s' : ''}`}>
                         <p>Thank you for taking the time to visit my website. If you have any questions or would like to get in touch with me, please feel free to use the contact form below.</p>
                     </div>
 
                     {/* https://formsubmit.co/donghan20002@gmail.com for some reason this was working remember to delete it afterwards*/}
 
-                    <div className='form-div'>
+                    <div className={`form-div ${addClass ? 'animate__animated animate__fadeIn animate__delay-2s' : ''}`}>
                         <form action="https://formsubmit.co/37ce8add4d3e5112d718c592e53217b8" method="POST">
 
                             {/* Honey Pot */}
@@ -199,9 +216,9 @@ export default function Contact() {
                 </div>
 
 
-                <div ref={canvasRef} className='contact-canvas'>
+                <div ref={canvasRef} className={`contact-canvas ${addClass ? 'animate__animated animate__fadeIn' : ''}`}>
                     {inView && (
-                        <Canvas performance={{ max: 0.1 }} camera={{ position: [30, -2, -5] }}>
+                        <Canvas className={`${addClass ? 'animate__animated animate__fadeIn  animate__delay-1s' : ''}`} performance={{ max: 0.1 }} camera={{ position: [30, -2, -5] }}>
                             <directionalLight position={[-80, 200, 40]} intensity={0.8} color="#D61424" />
                             <directionalLight position={[-20, 50, 20]} intensity={1} color="#D61424" />
                             <directionalLight position={[-20, 50, 20]} intensity={0.5} color="#D61424" />
@@ -211,7 +228,7 @@ export default function Contact() {
                         </Canvas>
                     )}
 
-                    <div className='address'>
+                    <div className={`address ${addClass ? 'animate__animated animate__backInUp animate__delay-4s' : ''}`}>
                         <div className='add-text'>
                             <p>Low Dong Han,</p>
                             <p>Ang Mo Kio Avenue 10</p>

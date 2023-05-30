@@ -9,9 +9,8 @@ import { useInView } from 'react-intersection-observer';
 export default function Experience() {
 
     const [canvasRef, inView] = useInView({ threshold: 0 });
-
     const [addClass, setAddClass] = useState(false);
-    console.log(window.scrollY)
+
     const handleScroll = () => {
         if (window.scrollY > 2700) {
             setAddClass(true);
@@ -34,7 +33,7 @@ export default function Experience() {
 
                 <div ref={canvasRef} className={`skills-individual-template ${addClass ? 'animate__animated animate__fadeIn' : ''}`}>
                     {inView && (
-                        <Canvas className='animate__animated animate__fadeIn' performance={{ max: 0.1 }} shadows dpr={1.5} camera={{ position: [-6, 22, -15], fov: 55 }}>
+                        <Canvas className='animate__animated animate__fadeIn animate__delay-1s' performance={{ max: 0.1 }} shadows dpr={1.5} camera={{ position: [-6, 22, -15], fov: 55 }}>
                             {/* <Perf position="top-left" /> */}
                             <Stage />
                             {skillsets.map((skillset, i) => (
@@ -66,7 +65,7 @@ export default function Experience() {
 
                         <div className={`skill-header ${addClass ? 'animate__animated animate__fadeIn' : ''}`}>
                             <header>My Skills</header>
-                            <p>I am passionate about using my skills to contribute to meaningful projects and am excited about the opportunities that lie ahead.
+                            <p >I am passionate about using my skills to contribute to meaningful projects and am excited about the opportunities that lie ahead.
                                 Here you will find a summary of my skills and expertise that I have acquired throughout my career.</p>
                         </div>
 

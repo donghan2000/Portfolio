@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Canvas } from "@react-three/fiber";
-import RoCanvas from "./Assets/Robot-Canvas.jsx";
 import { useInView } from 'react-intersection-observer';
+import RoCanvas from './Assets/Robot-Canvas.jsx';
+
 
 
 export default function Story() {
@@ -31,7 +32,7 @@ export default function Story() {
                 <div className='vertical story-v'></div>
             </div>
 
-            <div className='about-div '>
+            <div ref={canvasRef} className='about-div '>
                 <div className='about-text'>
 
                     <div className='about-p'>
@@ -57,12 +58,16 @@ export default function Story() {
                     </div>
                 </div>
 
-                <Canvas ref={canvasRef} className={`about-canvas ${addClass ? 'animate__animated animate__fadeIn' : ''}`}>
+                <div className={`about-canvas ${addClass ? 'animate__animated animate__fadeIn' : ''}`}>
                     {inView && (
-                        <RoCanvas className='animate__animated animate__fadeIn' />
+                        <Canvas className={`${addClass ? 'animate__animated animate__fadeIn  animate__delay-1s' : ''}`}>
+                            <ambientLight />
+                            <RoCanvas />
+                        </Canvas>
                     )}
-                </Canvas>
+                </div>
             </div>
+
 
 
         </section>
