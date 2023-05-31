@@ -30,6 +30,7 @@ export default function Gallery() {
         setOpen(i);
         setModal(true);
         document.body.classList.add('modal-open');
+
     }
 
     const closeModal = (event) => {
@@ -67,7 +68,7 @@ export default function Gallery() {
 
     return <>
 
-        <div items={items} className='work-modal'
+        <div items={items} className={`work-modal ${modal ? 'animate__animated animate__backInUp' : ''}`}
             style={{ display: modal ? "block" : "none" }}
         >
 
@@ -75,7 +76,7 @@ export default function Gallery() {
                 <span className='modal-close'>x</span>
             </button>
 
-            <div className='work-flex-div'>
+            <div className='work-flex-div' >
 
                 <div className='work-modal-div'>
                     <img className='work-modal-images' src={items[openedModal].workContentImage} alt='gallery-images' />

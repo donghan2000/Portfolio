@@ -82,7 +82,7 @@ function NavBar() {
     return isVisible ? <>
         <div className={navOpen ? 'sidebar open' : 'sidebar'}>
             <div className="logo">
-                <img src="./img/logo-test2.png" alt="logo" />
+                <img src="./img/logo.png" alt="logo" />
                 <h3>Dong Han</h3>
             </div>
             <nav>

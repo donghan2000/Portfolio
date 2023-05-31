@@ -626,6 +626,15 @@
         margin-left: -700px;
     }
 
+    .work-circle {
+        margin-left: 0px;
+    }
+
+    .works-gallery-image {
+        background-size: cover !important;
+    }
+
+
 
     /* ****************************************************************************************** */
     /* **************************** MY STORY **********************************/
@@ -880,9 +889,7 @@
 
 @media screen and (max-width: 550px) {
 
-    .work-marker {
-        margin-left: 0px;
-    }
+
 
     .work-content {
         margin-left: -80px;
@@ -895,9 +902,7 @@
 }
 
 @media screen and (max-width: 480px) {
-    .work-marker {
-        margin-left: -45px;
-    }
+
 
     .work-content {
         margin-left: -100px;
@@ -905,6 +910,15 @@
 
     .work-circle {
         margin-left: -100px;
+        height: 100px !important;
+        width: 100px !important;
+        opacity: 1 !important;
+    }
+
+
+    .work-marker {
+        margin-left: 50px;
+        left: 0px;
     }
 }
 

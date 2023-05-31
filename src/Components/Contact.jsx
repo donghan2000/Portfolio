@@ -2,7 +2,6 @@ import * as THREE from 'three';
 import ThreeGlobe from 'three-globe';
 import React, { useRef, useLayoutEffect, useEffect, useState } from 'react'
 import { Canvas, extend, useFrame } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
 import countries from "./Assets/custom.geo.json";
 import lines from "./Assets/lines.json";
 import map from "./Assets/map.json";
@@ -105,6 +104,10 @@ export default function Contact() {
         </>
     }
 
+    const handleButtonCllick = (e) => {
+        e.preventDefault();
+    }
+
 
     const handleEmailClick = (e) => {
         e.preventDefault();
@@ -178,7 +181,6 @@ export default function Contact() {
                         <p>Thank you for taking the time to visit my website. If you have any questions or would like to get in touch with me, please feel free to use the contact form below.</p>
                     </div>
 
-                    {/* https://formsubmit.co/donghan20002@gmail.com for some reason this was working remember to delete it afterwards*/}
 
                     <div className={`form-div ${addClass ? 'animate__animated animate__fadeIn animate__delay-2s' : ''}`}>
                         <form action="https://formsubmit.co/37ce8add4d3e5112d718c592e53217b8" method="POST">
@@ -190,7 +192,7 @@ export default function Contact() {
                             <input type='hidden' name='_captcha' value="false" />
 
                             {/* Success Page */}
-                            <input type='hidden' name="_next" value="http://localhost:3000/" />
+                            <input type='hidden' name="_next" value="http://donghan.co/success.html" />
 
                             <div className="form-group">
                                 <div className="col-sm-12">
@@ -206,9 +208,10 @@ export default function Contact() {
 
                             <textarea className="form-control" rows="10" placeholder="MESSAGE" name="Description"></textarea>
 
-                            <button className="contact-wrap" id="submit" type="submit" value="SEND">
-                                <a href='http://donghan.co' aria-disabled="true" className="button">CONTACT ME</a>
+                            <button className="contact-wrap" id="submit" type="submit" value="SEND" method="POST">
+                                <a aria-disabled="true" className="button">CONTACT ME</a>
                             </button>
+
 
                         </form>
                     </div>
@@ -222,7 +225,6 @@ export default function Contact() {
                             <directionalLight position={[-80, 200, 40]} intensity={0.8} color="#D61424" />
                             <directionalLight position={[-20, 50, 20]} intensity={1} color="#D61424" />
                             <directionalLight position={[-20, 50, 20]} intensity={0.5} color="#D61424" />
-                            <OrbitControls enableZoom={false} />
                             <Globe scale={scale} />
                             <ambientLight />
                         </Canvas>
