@@ -20,6 +20,7 @@ function NavBar() {
     const navTo = ["hero", "portfolio", "story", "skills", "contact"]
 
 
+
     const [navOpen, setNavOpen] = useState(false);
     const [activeNavItem, setActiveNavItem] = useState(0);
 
@@ -121,11 +122,9 @@ function NavBar() {
 }
 
 function Hamburger() {
-
     const [isHamburger, setHamburger] = useState(false);
-
-    const navItems = ["Home", "Portfolio", "My Story", "Skills", "Contact Me"]; // replace with your own navItems
-    const navTo = ["hero", "portfolio", "story", "skills", "contact"]
+    const navItems = ["Home", "Portfolio", "My Story", "Skills", "Contact Me"];
+    const navTo = ["hero", "portfolio", "story", "skills", "contact"];
     const [isChecked, setIsChecked] = useState(false);
 
     const handleCheckboxChange = (event) => {
@@ -134,45 +133,54 @@ function Hamburger() {
     };
 
     const navlistClicked = (event) => {
-        setIsChecked(false)
+        setIsChecked(false);
         document.body.classList.toggle("no-scroll", event.target.checked);
+    };
+
+    const handleChange = (e) => {
+        e.preventDefault();
+        window.open("http://donghan.co/Resume.pdf", '_blank');
     };
 
 
     useEffect(() => {
         function hamburgerAppear() {
-            if (window.innerWidth < 768) { // Change 768 to your desired breakpoint
+            if (window.innerWidth < 768) {
                 setHamburger(true);
             } else {
                 setHamburger(false);
             }
         }
+
         hamburgerAppear();
         window.addEventListener('resize', hamburgerAppear);
         return () => window.removeEventListener('resize', hamburgerAppear);
     }, []);
 
-    return isHamburger ? <>
-        {/* Put hamburger code here */}
+    return isHamburger ? (
         <div className="hamburger">
-            <input className="menu-icon" type="checkbox" id="menu-icon" name="menu-icon" checked={isChecked} onChange={handleCheckboxChange} />
+            <input
+                className="menu-icon"
+                type="checkbox"
+                id="menu-icon"
+                name="menu-icon"
+                checked={isChecked}
+                onChange={handleCheckboxChange}
+            />
             <label className="x-hamburger" htmlFor="menu-icon"></label>
             <nav className="nav">
                 <ul className="pt-5">
-
                     {navItems.map((item, index) => (
-
-                        <Link key={index} to={`${navTo[index]}`} spy={true} smooth={true} offset={-10} duration={500} >
-                            <li
-                                key={index}
-                                onClick={navlistClicked}
-                            >
-                                <p>{item}</p>
-                            </li>
-                        </Link>
+                        <li key={index} onClick={navlistClicked}>
+                            <a href={`#${navTo[index]}`}>{item}</a>
+                        </li>
                     ))}
+
+                    <li>
+                        <a onClick={handleChange}>Resume</a>
+                    </li>
                 </ul>
             </nav>
         </div>
-    </> : null;
+    ) : null;
 }

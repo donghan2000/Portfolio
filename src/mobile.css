@@ -220,17 +220,7 @@
         padding-top: 40px;
     }
 
-    .work-marker {
-        margin-left: -400px;
-    }
 
-    .work-content {
-        margin-left: -400px;
-    }
-
-    .work-circle {
-        margin-left: -400px;
-    }
 
 
 
@@ -369,17 +359,7 @@
 
 @media only screen and (max-width: 1100px) {
 
-    .work-marker {
-        margin-left: -550px;
-    }
 
-    .work-content {
-        margin-left: -550px;
-    }
-
-    .work-circle {
-        margin-left: -550px;
-    }
 
     .about-canvas {
         width: 75% !important;
@@ -426,17 +406,6 @@
         top: 50.5%;
     }
 
-    .work-marker {
-        margin-left: -580px;
-    }
-
-    .work-content {
-        margin-left: -580px;
-    }
-
-    .work-circle {
-        margin-left: -580px;
-    }
 
 
 
@@ -511,17 +480,6 @@
 
 @media only screen and (max-width: 900px) {
 
-    .work-marker {
-        margin-left: -550px;
-    }
-
-    .work-content {
-        margin-left: -550px;
-    }
-
-    .work-circle {
-        margin-left: -550px;
-    }
 
     .title>h1 {
         margin-left: 90px;
@@ -537,17 +495,7 @@
 
 @media only screen and (max-width: 850px) {
 
-    .work-marker {
-        margin-left: -580px;
-    }
 
-    .work-content {
-        margin-left: -580px;
-    }
-
-    .work-circle {
-        margin-left: -580px;
-    }
 
     .title>h1 {
         margin-left: 90px;
