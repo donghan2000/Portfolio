@@ -8,6 +8,7 @@ export default function Robot(props) {
 
         {/* <Environment preset="studio" /> */}
         {/* <Environment near={1} far={1000} resolution={256} preset="city" /> */}
+        <Environment files="/potsdamer_platz_1k.hdr" />
 
         <group rotation={[0.3, 0, 0]} {...props} dispose={null}>
 
