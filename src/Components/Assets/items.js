@@ -119,7 +119,7 @@ export const items = [
 
   },
   {
-    imageUrl: "url(./img/thumbnails/Smartime-Thumb.png)",
+    imageUrl: "url(./img/thumbnails/smart.png)",
     height: 300,
     Title: "Smartime",
     workContentImage: "./img/thumbnails/Smartime-Content.svg",
