@@ -98,4 +98,4 @@ export default function Robot(props) {
     </>
 }
 
-useGLTF.preload("/models/robot.gltf");
+useGLTF.preload("/models/robot.glb");
