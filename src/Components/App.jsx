@@ -16,7 +16,6 @@ function App() {
     <Sidebar />
     <Masthead />
     <Gallery />
-    <Story />
     <Experience />
     <Contact />
     <Copyright />
