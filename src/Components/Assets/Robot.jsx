@@ -3,7 +3,7 @@ import { useGLTF, Environment } from "@react-three/drei";
 
 export default function Robot(props) {
 
-    const { nodes, materials } = useGLTF("./models/robot.glb");
+    const { nodes, materials } = useGLTF("/models/robot.glb");
     return <>
 
         {/* <Environment preset="studio" /> */}
@@ -98,4 +98,4 @@ export default function Robot(props) {
     </>
 }
 
-useGLTF.preload("./models/robot.gltf");
+useGLTF.preload("/models/robot.gltf");
