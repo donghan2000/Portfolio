@@ -1,8 +1,6 @@
 {
   "name": "my-starting-portfolio",
-  "homepage": "http://portfolio.donghan.co",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@react-spring/web": "^9.7.1",
     "@react-three/drei": "^9.61.3",
