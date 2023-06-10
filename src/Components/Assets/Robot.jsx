@@ -3,11 +3,11 @@ import { useGLTF, Environment } from "@react-three/drei";
 
 export default function Robot(props) {
 
-    const { nodes, materials } = useGLTF("models/robot.glb");
+    const { nodes, materials } = useGLTF("/models/robot.glb");
     return <>
 
         {/* <Environment preset="studio" /> */}
-        <Environment near={1} far={1000} resolution={256} preset="city" />
+        {/* <Environment near={1} far={1000} resolution={256} preset="city" /> */}
 
         <group rotation={[0.3, 0, 0]} {...props} dispose={null}>
 
@@ -98,4 +98,4 @@ export default function Robot(props) {
     </>
 }
 
-useGLTF.preload("models/robot.glb");
+// useGLTF.preload("models/robot.glb");
