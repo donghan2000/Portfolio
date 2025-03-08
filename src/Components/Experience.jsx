@@ -85,7 +85,7 @@ export default function Experience() {
                                     <p>2019-2019</p>
                                 </div>
                             </div>
-                            <div className='experiences-row-2'>
+                            <div className='experiences-row-1'>
                                 <div className='exp-small'>
                                     <p>IDENTIV</p>
                                     <p>2018-2018</p>
