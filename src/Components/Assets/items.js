@@ -63,7 +63,7 @@ export const items = [
 
   },
   {
-    imageUrl: "url(./img/thumbnails/nparks-annual-report-202223-thumb)",
+    imageUrl: "url(./img/thumbnails/nparks-annual-report-202223-thumb.png)",
     height: 300,
     Title: "National Parks AR 2022/23",
     workContentImage: "./img/thumbnails/nparks-annual-report-2022/23-content.png",
