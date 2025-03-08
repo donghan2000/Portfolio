@@ -154,4 +154,64 @@ export const items = [
     linkGoto: "http://donghan.co/vapour.pdf",
 
   },
+    {
+    imageUrl: "url(./img/thumbnails/Vapour-Thumb.png)",
+    height: 300,
+    Title: "Vapour",
+    workContentImage: "./img/thumbnails/Vapour-Content.png",
+    firstParagraph: "Our project aimed to address pressing social issues and we chose to focus on suicide prevention. After conducting research, we believed that implementing an AI-powered chatbot could effectively reduce the number of suicides.",
+    secondParagraph: "I was responsible for implementing the chatbot in a project aimed at addressing the issue of suicide prevention. Extensive research and user testing was conducted to refine the conversational flow of the chatbot, which was built using Slack integration as a prototype.",
+    thirdParagraph: "Check out the project in the link below",
+    linkText: "PROJECT LINK",
+    linkGoto: "http://donghan.co/vapour.pdf",
+
+  },
+    {
+    imageUrl: "url(./img/thumbnails/Vapour-Thumb.png)",
+    height: 300,
+    Title: "Vapour",
+    workContentImage: "./img/thumbnails/Vapour-Content.png",
+    firstParagraph: "Our project aimed to address pressing social issues and we chose to focus on suicide prevention. After conducting research, we believed that implementing an AI-powered chatbot could effectively reduce the number of suicides.",
+    secondParagraph: "I was responsible for implementing the chatbot in a project aimed at addressing the issue of suicide prevention. Extensive research and user testing was conducted to refine the conversational flow of the chatbot, which was built using Slack integration as a prototype.",
+    thirdParagraph: "Check out the project in the link below",
+    linkText: "PROJECT LINK",
+    linkGoto: "http://donghan.co/vapour.pdf",
+
+  },
+    {
+    imageUrl: "url(./img/thumbnails/Vapour-Thumb.png)",
+    height: 300,
+    Title: "Vapour",
+    workContentImage: "./img/thumbnails/Vapour-Content.png",
+    firstParagraph: "Our project aimed to address pressing social issues and we chose to focus on suicide prevention. After conducting research, we believed that implementing an AI-powered chatbot could effectively reduce the number of suicides.",
+    secondParagraph: "I was responsible for implementing the chatbot in a project aimed at addressing the issue of suicide prevention. Extensive research and user testing was conducted to refine the conversational flow of the chatbot, which was built using Slack integration as a prototype.",
+    thirdParagraph: "Check out the project in the link below",
+    linkText: "PROJECT LINK",
+    linkGoto: "http://donghan.co/vapour.pdf",
+
+  },
+    {
+    imageUrl: "url(./img/thumbnails/Vapour-Thumb.png)",
+    height: 300,
+    Title: "Vapour",
+    workContentImage: "./img/thumbnails/Vapour-Content.png",
+    firstParagraph: "Our project aimed to address pressing social issues and we chose to focus on suicide prevention. After conducting research, we believed that implementing an AI-powered chatbot could effectively reduce the number of suicides.",
+    secondParagraph: "I was responsible for implementing the chatbot in a project aimed at addressing the issue of suicide prevention. Extensive research and user testing was conducted to refine the conversational flow of the chatbot, which was built using Slack integration as a prototype.",
+    thirdParagraph: "Check out the project in the link below",
+    linkText: "PROJECT LINK",
+    linkGoto: "http://donghan.co/vapour.pdf",
+
+  },
+    {
+    imageUrl: "url(./img/thumbnails/Vapour-Thumb.png)",
+    height: 300,
+    Title: "Vapour",
+    workContentImage: "./img/thumbnails/Vapour-Content.png",
+    firstParagraph: "Our project aimed to address pressing social issues and we chose to focus on suicide prevention. After conducting research, we believed that implementing an AI-powered chatbot could effectively reduce the number of suicides.",
+    secondParagraph: "I was responsible for implementing the chatbot in a project aimed at addressing the issue of suicide prevention. Extensive research and user testing was conducted to refine the conversational flow of the chatbot, which was built using Slack integration as a prototype.",
+    thirdParagraph: "Check out the project in the link below",
+    linkText: "PROJECT LINK",
+    linkGoto: "http://donghan.co/vapour.pdf",
+
+  },
 ]
