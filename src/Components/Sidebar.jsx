@@ -35,7 +35,7 @@ function NavBar() {
 
     const handleChange = (e) => {
         e.preventDefault();
-        window.open("http://donghan.co/Resume.pdf", '_blank');
+        window.open("https://drive.google.com/file/d/18Gi4ziyn0FeqggcuEW7wtNNRIenltbJT/view?usp=drive_link", '_blank');
     };
 
 
