@@ -15,7 +15,7 @@ export const items = [
 
 
   }, {
-    imageUrl: "url(./img/thumbnails/ntucfirstcampus-thumb.png)",
+    imageUrl: "url(./img/thumbnails/ntucfirstcampus.png)",
     height: 300,
     Title: "NTUC FirstCampus Preschool Listing",
     workContentImage: "./img/thumbnails/ntucfirstcampus-content.png",
@@ -63,7 +63,7 @@ export const items = [
 
   },
   {
-    imageUrl: "url(./img/thumbnails/nparks-annual-report-2022/23-thumb.png)",
+    imageUrl: "url(./img/thumbnails/nparks-annual-report-202223-thumb)",
     height: 300,
     Title: "National Parks AR 2022/23",
     workContentImage: "./img/thumbnails/nparks-annual-report-2022/23-content.png",
@@ -220,7 +220,7 @@ export const items = [
     secondParagraph: "Our product was designed with the teacher's convenience in mind. To address their frustrations, we gathered their input and developed the idea of using spectacles to streamline the marking process.",
     thirdParagraph: "Check out the project in the link below",
     linkText: "PROJECT LINK",
-    linkGoto: "/smartime.pdf",
+    linkGoto: "https://drive.google.com/file/d/1-5R6gxd-TbZNnyClYyvzAX4mjOXqNx_J/view?usp=drive_link",
 
   },
   {
@@ -232,7 +232,7 @@ export const items = [
     secondParagraph: "I contributed illustrations and designed interactive elements for the storybook. The aim was to create engaging and memorable experiences for users, emphasizing the impact of littering on marine wildlife.",
     thirdParagraph: "Check out the project in the link below",
     linkText: "PROJECT LINK",
-    linkGoto: "/storybook.pdf",
+    linkGoto: "https://drive.google.com/file/d/1leq7vTAxSKAISj3qg0VIfJFRAmmBC0p8/view?usp=drive_link",
 
   },
   {
@@ -244,7 +244,7 @@ export const items = [
     secondParagraph: "I was responsible for implementing the chatbot in a project aimed at addressing the issue of suicide prevention. Extensive research and user testing was conducted to refine the conversational flow of the chatbot, which was built using Slack integration as a prototype.",
     thirdParagraph: "Check out the project in the link below",
     linkText: "PROJECT LINK",
-    linkGoto: "/vapour.pdf",
+    linkGoto: "https://drive.google.com/file/d/1gfgGBIC5SDMAZPEwwF40xGlBSi-kjbj4/view?usp=drive_link",
 
   },
 
