@@ -95,6 +95,12 @@ export default function Experience() {
                                     <p>2020-2022</p>
                                 </div>
                             </div>
+                            <div className='experiences-row-2'>
+                                <div className='exp-small'>
+                                    <p>WhooshPro</p>
+                                    <p>2023-Now</p>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
